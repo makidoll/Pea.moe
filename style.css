@@ -55,13 +55,22 @@
 				height: 4px;
 			}
 
-			#mascot {
+			#kyouko {
 				position: absolute;
 				top: 67px;
 				left: 756px;
 				width: 154px;
 				height: 194px;
 				background-image: url("kyouko.png");
+			}
+
+			#mascot {
+				position: absolute;
+				bottom: 5px;
+				right: 5px;
+				width: 207px;
+				height: 542px;
+				background-image: url("mascot.png");
 			}
 
 			#navbar {
