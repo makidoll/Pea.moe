@@ -31,9 +31,18 @@
 				width: 100%;
 				height: 100%;
 			}
-			#page {
+
+			#pageheader {
 				position: absolute; margin: auto;
-				top: 100px; left: 0; right: 0;
+				top: 101px; left: 0; right: 0;
+				width: 936px;
+				background-color: #4b7c68;
+				padding: 2px;
+			}
+
+			#pagecontent {
+				position: absolute; margin: auto;
+				top: 346px; left: 0; right: 0;
 				width: 936px;
 				background-color: #4b7c68;
 				padding: 2px;
@@ -46,7 +55,7 @@
 				background-image: url("header.png");
 			}
 
-			#easteregg {
+			#window {
 				position: absolute;
 				background-color: #b0cfc3;
 				top: 137px;
@@ -57,16 +66,25 @@
 
 			#akarin {
 				position: absolute;
-				top: -107px;
 				left: 250px;
 				width: 246px;
 				height: 352px;
 				background-image: url("akarin.png");
+				transition: top 1s;
+				transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 			}
 
+			#akarinhide {
+				position: absolute;
+				left: 250px;
+				width: 246px;
+				height: 352px;
+				background-color: #2e4b3f;
+			}
+			
 			#kyouko {
 				position: absolute;
-				top: 67px;
+				top: -178px;
 				left: 756px;
 				width: 154px;
 				height: 194px;
@@ -84,14 +102,15 @@
 
 			#navbar {
 				background-color: #4b7c68;
-				padding: 3px;
+				padding: 2px;
 				width: 930px;
 				height: 10px;
 			}
 
 			#nav {
 				position: absolute;
-				top: 237px;
+				/*top: 237px;*/
+				top: -8px;
 				left: 2px;
 				font-size: 10px;
 				color: #9fc5b6;

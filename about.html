@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ABOUT ME</title>
+		<title>PeaaaaaaAAAAAAAAAAAAAAAAAAAAAAAA</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script language="javascript">
 
 			function toggle() {
 			var ele = document.getElementById("akarin");
+			var audio = new Audio('akarin.mp3');
 				if(ele.style.display == "block") {
     				ele.style.display = "none";
+    				ele.style.top = "245px";
   				}
 				else {
 					ele.style.display = "block";
+					audio.play();
+    				setTimeout(function() {
+	    				ele.style.top = "-107px";
+    				}, 1300);
+    				setTimeout(function() {
+	    				ele.style.top = "245px";
+    				}, 3010);
+    				setTimeout(function() {
+	    				ele.style.display = "none";
+    				}, 4020);
 				}
 			} 
 		</script>
@@ -22,12 +34,15 @@
 		</audio>
 		<div id="background">
 			<div id="mascot"></div>
-			<div id="page">
+			<div id="pageheader">
+				<a href="javascript:toggle();"><div id="window"></div></a>
 				<div id="header"></div>
-				<div id="akarin" style="display: none"></div>
-				<a href="javascript:toggle();"><div id="easteregg"></div></a>
+				<div id="akarin" style="display: none; top: 245px;"></div>
+				<div id="akarinhide"></div>
+			</div>
+			<div id="pagecontent">
+				<div id="navbar"></div>				
 				<div id="kyouko"></div>
-				<div id="navbar"></div>
 				<p id="nav">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="about.html">ABOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="contact.html">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</p>
 				<div id="content">
 					<p>ALL THIS UGLY PIXELART WAS MADE BY ME AND IT TOOK LIKE TWO WHOLE DAYS<!--<br>THE BACKGROUND MUSIC IS BY TIMESTAMP HES REALLY CUTE AND MAKE GOOD MUSIC!--><br>

@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>LINKS N SHIT</title>
+		<title>PeaaaaaaAAAAAAAAAAAAAAAAAAAAAAAA</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script language="javascript">
 
 			function toggle() {
 			var ele = document.getElementById("akarin");
+			var audio = new Audio('akarin.mp3');
 				if(ele.style.display == "block") {
     				ele.style.display = "none";
+    				ele.style.top = "245px";
   				}
 				else {
 					ele.style.display = "block";
+					audio.play();
+    				setTimeout(function() {
+	    				ele.style.top = "-107px";
+    				}, 1300);
+    				setTimeout(function() {
+	    				ele.style.top = "245px";
+    				}, 3010);
+    				setTimeout(function() {
+	    				ele.style.display = "none";
+    				}, 4020);
 				}
 			} 
 		</script>
@@ -22,12 +34,15 @@
 		</audio>
 		<div id="background">
 			<div id="mascot"></div>
-			<div id="page">
+			<div id="pageheader">
+				<a href="javascript:toggle();"><div id="window"></div></a>
 				<div id="header"></div>
-				<div id="akarin" style="display: none"></div>
-				<a href="javascript:toggle();"><div id="easteregg"></div></a>
+				<div id="akarin" style="display: none; top: 245px;"></div>
+				<div id="akarinhide"></div>
+			</div>
+			<div id="pagecontent">
+				<div id="navbar"></div>				
 				<div id="kyouko"></div>
-				<div id="navbar"></div>
 				<p id="nav">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="about.html">ABOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="contact.html">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</p>
 				<div id="content">
 					<p>THINGS TO CLICK ON:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:pe@cock.li">SEND ME AN EMAIL!</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/c/peaofficial">CRINGE AT MY DUMB VIDEOS</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/Peacockli">CHECK OUT MY TWITTER THAT I NEVER EVER USE</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="steam://friends/add/76561198024956393">ERP WITH ME ON STEAM</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nigge.rs/">AMAZING WEBSITE MADE BY BEN AND ME BUT MOSTLY BEN</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://cock.li/mailinglist">SHITPOST ON THE ML WITH ME AND EVEN GET UR OWN COCKMAIL HOSTED BY VC</a><!--<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.youtube.com/user/Jujudo">ALSO CHECK OUT THE CUTIE THAT MADE THE BG MUSIC!!!</a>--></p>
