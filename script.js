@@ -1,6 +1,7 @@
 function akarin() {
 	let ele = document.getElementById("akarin");
 	let audio = new Audio('assets/akarin.mp3');
+	audio.volume = 0.5;
 	audio.play();
 	
 	if (ele.style.display == "block") return;
@@ -19,6 +20,6 @@ function akarin() {
 
 function tomato() {
 	let audio = new Audio('assets/tomato.mp3');
-	audio.volume = 0.1;
+	audio.volume = 0.5;
 	audio.play();
 }
