@@ -3,6 +3,18 @@
 	<head>
 		<title>ABOUT ME</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script language="javascript">
+
+			function toggle() {
+			var ele = document.getElementById("akarin");
+				if(ele.style.display == "block") {
+    				ele.style.display = "none";
+  				}
+				else {
+					ele.style.display = "block";
+				}
+			} 
+		</script>
 	</head>
 	<body>
 		<audio id="music" autoplay loop>
@@ -12,7 +24,8 @@
 			<div id="mascot"></div>
 			<div id="page">
 				<div id="header"></div>
-				<div id="easteregg"></div>
+				<div id="akarin" style="display: none"></div>
+				<a href="javascript:toggle();"><div id="easteregg"></div></a>
 				<div id="kyouko"></div>
 				<div id="navbar"></div>
 				<p id="nav">|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="about.html">ABOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="contact.html">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</p>

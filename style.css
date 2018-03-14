@@ -33,7 +33,7 @@
 			}
 			#page {
 				position: absolute; margin: auto;
-				top: 50px; left: 0; right: 0;
+				top: 100px; left: 0; right: 0;
 				width: 936px;
 				background-color: #4b7c68;
 				padding: 2px;
@@ -53,6 +53,15 @@
 				left: 478px;
 				width: 4px;
 				height: 4px;
+			}
+
+			#akarin {
+				position: absolute;
+				top: -107px;
+				left: 250px;
+				width: 246px;
+				height: 352px;
+				background-image: url("akarin.png");
 			}
 
 			#kyouko {
