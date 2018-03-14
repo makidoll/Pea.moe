@@ -23,3 +23,9 @@ function tomato() {
 	audio.volume = 0.5;
 	audio.play();
 }
+
+function page(page) {
+	let content = document.getElementById("content");
+	let aaaaaaa = document.getElementById("content-"+page);
+	content.innerHTML = aaaaaaa.innerHTML;
+}; page("home");
