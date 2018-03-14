@@ -1,6 +1,6 @@
 			@font-face {
    				font-family: "pixelfont";
-    			src: url(Pixeled.ttf) format("truetype");
+    			src: url("assets/Pixeled.ttf") format("truetype");
     		}
     		::selection {
  				background: #b0cfc3; /* WebKit/Blink Browsers */
@@ -52,16 +52,15 @@
 				width: 100%;
 				height: 243px;
 				background-color: #9fc5b6;
-				background-image: url("header.png");
+				background-image: url("assets/header.png");
 			}
 
 			#window {
 				position: absolute;
-				background-color: #b0cfc3;
-				top: 137px;
-				left: 478px;
-				width: 4px;
-				height: 4px;
+				top: 117px;
+				left: 468px;
+				width: 40px;
+				height: 40px;
 			}
 
 			#akarin {
@@ -69,8 +68,8 @@
 				left: 250px;
 				width: 246px;
 				height: 352px;
-				background-image: url("akarin.png");
-				transition: top 1s;
+				background-image: url("assets/akarin.png");
+				transition: all 1s;
 				transition-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 			}
 
@@ -88,7 +87,7 @@
 				left: 756px;
 				width: 154px;
 				height: 194px;
-				background-image: url("kyouko.png");
+				background-image: url("assets/kyouko.png");
 			}
 
 			#mascot {
@@ -97,7 +96,7 @@
 				right: 5px;
 				width: 207px;
 				height: 542px;
-				background-image: url("mascot.png");
+				background-image: url("assets/mascot.png");
 			}
 
 			#navbar {
@@ -126,7 +125,7 @@
 			}
 			body {
 				background-color: #2e4b3f;
-				cursor: url(cursor.png), auto;
+				cursor: url("assets/cursor.png"), auto;
 				}
 			#nav a {
 				color: #9fc5b6;
