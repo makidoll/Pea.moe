@@ -25,10 +25,8 @@ div, img {
 	image-rendering: -o-crisp-edges;
 }
 
-#background {
-	position: absolute; margin: auto;
-	width: 100%;
-	height: 100%;
+#test {
+	top: 590px;
 }
 
 #pageheader {
@@ -87,15 +85,30 @@ div, img {
 	width: 154px;
 	height: 194px;
 	background-image: url("assets/kyouko.png");
+/*	transition: all 100ms linear;*/
+}
+
+/*#kyouko:hover {
+	background-image: url("assets/kyouko2.png");
+}*/
+
+@keyframes mascotFall {
+	0% {bottom: 100vh;}
+	100% {bottom: 5px;}
 }
 
 #mascot {
 	position: absolute;
-	bottom: 5px;
+	bottom: 100vh;
 	right: 5px;
 	width: 207px;
 	height: 542px;
 	background-image: url("assets/mascot.png");
+	animation-name: mascotFall;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	animation-fill-mode: forwards;
+	animation-delay: 200ms;
 }
 
 #navbar {
@@ -124,7 +137,7 @@ div, img {
 	color: #4b7c68;
 }
 
-body {
+body, html {
 	background-color: #2e4b3f;
 	cursor: url("assets/cursor.png"), auto;
 }
@@ -138,4 +151,23 @@ body {
 #content a {
 	color: #4b7c68;
 	text-decoration: none;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		margin-top: 100px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+#page {
+	position: relative;
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	animation-fill-mode: forwards;
 }
