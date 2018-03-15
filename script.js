@@ -1,9 +1,10 @@
-// akarin easter egg
+// akarin
 
 function akarin() {
 	let akarin = document.getElementById("akarin");
 	let akarinWindow = document.getElementById("window");
 	let audio = new Audio('assets/akarin.mp3');
+
 	audio.volume = 0.5;
 	audio.play();
 	
@@ -23,10 +24,26 @@ function akarin() {
 	}, 4020);
 }
 
+//ayano
+
+function door() {
+	let door = document.getElementById("door");
+	let audio = new Audio('assets/TOSHINOUKYOUKO.mp3');
+
+	audio.volume = 0.5;
+	audio.play();
+
+	door.style.left = "320px";
+	setTimeout(function() {
+		door.style.left = "10px";
+	}, 3010);
+}
+
 // tomato soundbyte
 
 function tomato() {
 	let audio = new Audio('assets/tomato.mp3');
+
 	audio.volume = 0.5;
 	audio.play();
 }
@@ -36,6 +53,7 @@ function tomato() {
 function page(page) {
 	let content = document.getElementById("content");
 	let contentx = document.getElementById("content-"+page);
+	
 	content.innerHTML = contentx.innerHTML;
 }; page("home");
 
