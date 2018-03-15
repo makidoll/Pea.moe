@@ -39,7 +39,7 @@ function page(page) {
 	content.innerHTML = contentx.innerHTML;
 }; page("home");
 
-// site intro
+// mascot animation
 
 setTimeout(function(){
 	document.getElementById("mascot").style.bottom = "5px";
