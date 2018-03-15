@@ -28,7 +28,7 @@ function akarin() {
 
 function door() {
 	let door = document.getElementById("door");
-	let audio = new Audio('assets/TOSHINOKYOUKO.mp3');
+	let audio = new Audio('assets/TOSHINOUKYOUKO.mp3');
 
 	audio.volume = 0.5;
 	audio.play();
