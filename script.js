@@ -1,3 +1,5 @@
+// akarin easter egg
+
 function akarin() {
 	let akarin = document.getElementById("akarin");
 	let akarinWindow = document.getElementById("window");
@@ -21,11 +23,15 @@ function akarin() {
 	}, 4020);
 }
 
+// tomato soundbyte
+
 function tomato() {
 	let audio = new Audio('assets/tomato.mp3');
 	audio.volume = 0.5;
 	audio.play();
 }
+
+// 3 contents 1 page
 
 function page(page) {
 	let content = document.getElementById("content");
@@ -38,3 +44,13 @@ function page(page) {
 setTimeout(function(){
 	document.getElementById("mascot").style.bottom = "5px";
 }, 200); 
+
+// scrolling title
+
+var scrl = "AAAAaaaaaAAaaAaAAAAAaaaAAAAAAaaaaAAAAAAAaaaaaAAAaAaaAaAaaaAAaaaaa";
+function scrolltitle() {
+	scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
+	document.title = scrl;
+	setTimeout("scrolltitle()", 300);
+}
+scrolltitle();
