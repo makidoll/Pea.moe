@@ -28,7 +28,7 @@ function akarin() {
 
 function door() {
 	let door = document.getElementById("door");
-	let audio = new Audio('assets/TOSHINOUKYOUKO.mp3');
+	let audio = new Audio('assets/TOSHINOKYOUKO.mp3');
 
 	audio.volume = 0.5;
 	audio.play();
@@ -53,7 +53,7 @@ function tomato() {
 function page(page) {
 	let content = document.getElementById("content");
 	let contentx = document.getElementById("content-"+page);
-	
+
 	content.innerHTML = contentx.innerHTML;
 }; page("home");
 
