@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/pea
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://pea.moe
+  * I am pea (https://keybase.io/pea) on keybase.
+  * I have a public key with fingerprint 8625 77C3 BD1F A98E E130  859E F3B2 0C76 BE90 BCE2
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101e82f759fd30dee718e042a76523f8fb9056274d2906aa3a0085db1632c626e1d0a",
+      "fingerprint": "862577c3bd1fa98ee130859ef3b20c76be90bce2",
+      "host": "keybase.io",
+      "key_id": "f3b20c76be90bce2",
+      "kid": "0101e82f759fd30dee718e042a76523f8fb9056274d2906aa3a0085db1632c626e1d0a",
+      "uid": "0c88d0007df09d6c79503eab706e7500",
+      "username": "pea"
+    },
+    "service": {
+      "hostname": "pea.moe",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1521078536,
+  "expire_in": 157680000,
+  "prev": "b56c962c8e81c04f03b39b7eeec3764bac2618d24843190f41ba55ad9020c2c0",
+  "seqno": 22,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.76
+Comment: https://keybase.io/crypto
+
+yMIiAnicrZJZSBVRGMfvtU0vFW20EUhDG3GJc87cOTNzoYeo9CWIQjItus2Z8811
+tO5c76YXM9rpxRAjbaGFFqIs2mgvSSuwRCJCrZAIzZCgjbCEMjvTQi899nQ43/n/
+/uf/fXz3Rg3x+LyfLo5MNVTf6vK2NO5KegpPPc6skJjD01KwQiqBnwes4xBPhEps
+LgUlhBEGjViqoltcRhxAxRqgADFUqhDZ0iymI4USNcCJjqhhyAZCmsIZpjIxKaGA
+OTIkv2TZkTDEojE7khC2GiWKqpoy49gydA0Ay4LSwZIZQaZKGeiImUAEWOTEXUKE
+Y0Yc5tmOqIlL6Ge8f+j/c+7kLztT0zhCSOUW0jk1VV1BMhhMRRRUBSFXGIdYxFgP
+Qh0FQ6r0S6KQsk1wZ+o28fdx3noHBBGNOQnHdNaJYlEiEY0HXSiRjrqqMmCh33yI
+2REupieIFMTithORglgozYTtGmKFYKRqikz9EpRH7RiEbFehqFQTiZH7D6SEJVOo
+qVNiaqBhEwUsJDNZZyoAmLJKA8wwCcUaJwEtIGMdWQHMDEUxuI7EiInp9hiH0ogj
+BQkROY2w8Izb4YiRSMZAqmy6s3qox+vzDB+W4a6Vx5c15s+yZX8dMbjqeIGXfrRT
+al5788P7deH6x8/W4KYTeKAi3dfVcejc29qNg2Xpr0/GV5yuKlu2o6fWU1m7/dru
+cXtL72eeiV7ZnJ+bdWNo77HcAwxv6u+YdHz/Qf/tu2sn16x4X9V4ckJ+JLngRPmY
+Ux1Xj9QVbF3krxlAny7VPypYvPD76/KNo3du2zLFNy7/cPbLN2142+LUh8a+D+1L
+C/mFPcmlvrqjnTP7910+fLK19vSsB18avs3NWptRddN7duK5C/1XlqxsfbXhdnH3
+7JzusaGZZwa+N/PlOXeM833TmtouPoenn2H+ipYX26cn5+TpnfDukrf9+nLI2dAz
+n3VVF7c2N2VMrclr6JzR+wPxiklp
+=TEeN
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pea
+
+==================================================================
