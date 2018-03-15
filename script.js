@@ -1,20 +1,23 @@
 function akarin() {
-	let ele = document.getElementById("akarin");
+	let akarin = document.getElementById("akarin");
+	let akarinWindow = document.getElementById("window");
 	let audio = new Audio('assets/akarin.mp3');
 	audio.volume = 0.5;
 	audio.play();
 	
-	if (ele.style.display == "block") return;
-	ele.style.display = "block";
-	
+	if (akarin.style.display == "block") return;
+	akarin.style.display = "block";
+	akarinWindow.style.display = "none";
+
 	setTimeout(function() {
-		ele.style.top = "-107px";
+		akarin.style.top = "-107px";
 	}, 1300);
 	setTimeout(function() {
-		ele.style.top = "245px";
+		akarin.style.top = "245px";
 	}, 3010);
 	setTimeout(function() {
-		ele.style.display = "none";
+		akarin.style.display = "none";
+		akarinWindow.style.display = "block";
 	}, 4020);
 }
 
@@ -26,6 +29,12 @@ function tomato() {
 
 function page(page) {
 	let content = document.getElementById("content");
-	let aaaaaaa = document.getElementById("content-"+page);
-	content.innerHTML = aaaaaaa.innerHTML;
+	let contentx = document.getElementById("content-"+page);
+	content.innerHTML = contentx.innerHTML;
 }; page("home");
+
+// site intro
+
+setTimeout(function(){
+	document.getElementById("mascot").style.bottom = "5px";
+}, 200); 

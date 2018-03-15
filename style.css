@@ -85,17 +85,17 @@ div, img {
 	width: 154px;
 	height: 194px;
 	background-image: url("assets/kyouko.png");
-/*	transition: all 100ms linear;*/
+	/*transition: all 100ms linear;*/
 }
 
 /*#kyouko:hover {
 	background-image: url("assets/kyouko2.png");
-}*/
-
-@keyframes mascotFall {
+}
+*/
+/*@keyframes mascotFall {
 	0% {bottom: 100vh;}
 	100% {bottom: 5px;}
-}
+}*/
 
 #mascot {
 	position: absolute;
@@ -104,11 +104,16 @@ div, img {
 	width: 207px;
 	height: 542px;
 	background-image: url("assets/mascot.png");
-	animation-name: mascotFall;
+/*	animation-name: mascotFall;
 	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 	animation-fill-mode: forwards;
-	animation-delay: 200ms;
+	animation-delay: 200ms;*/
+	transition: all 1s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+#mascot:hover{
+	bottom: 50px !important;
 }
 
 #navbar {
