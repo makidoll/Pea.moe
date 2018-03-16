@@ -6,8 +6,9 @@
 	</head>
 	<body>
 		<audio id="music" autoplay loop>
-		    <source src="timestamp.mp3" type="audio/mp3">
+			<source src="timestamp.mp3" type="audio/mp3">
 		</audio>
+		<div id="bgcolor"></div>
 		<div id="mascot"></div>
 		<div id="ayano"></div>
 		<a href="javascript:door();"><div id="door"></div></a>
@@ -21,7 +22,17 @@
 			<div id="pagecontent">
 				<div id="navbar"></div>				
 				<a href="javascript:tomato();"><div id="kyouko"></div></a>
-				<div id="settings"><p>NOTHING HERE YET</p></div>
+				<div id="settings">
+	 				<p>THIS DOES NOTHING FOR NOW</p>
+					<div class="hueslider">
+						<input type="range"
+							   min="0"
+							   max="360"
+							   value="0"
+							   id="slider1"
+							   step="1">
+					</div>
+				</div>
 				<p id="nav">
 					|<a href="javascript:page('home');">HOME</a>
 					|<a href="javascript:page('about');">ABOUT</a>

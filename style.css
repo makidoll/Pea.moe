@@ -91,11 +91,13 @@ div, img {
 }
 
 #settings:hover {
-	width: 200px;
-	background-color: rgba(94,155,131,0.4);
+	width: 420px;
+	background-color: rgba(94,155,131,0.7);
+	background-image: url("assets/settingshover.png");
 }
 
-#settings p {
+#settings p {	
+	color: #9fc5b6;
 	position: absolute;
 	opacity: 0;
 	padding-top: 3px;
@@ -111,11 +113,38 @@ div, img {
 }
 
 #settings:hover p {
+	display: block;
+	animation-name: settingsText;
+	animation-duration: 400ms;
+	animation-fill-mode: forwards;
+}
+
+#settings:hover #slider1 {
 	color: #4b7c68;
 	display: block;
 	animation-name: settingsText;
 	animation-duration: 400ms;
 	animation-fill-mode: forwards;
+}
+
+#slider1 {
+	-webkit-appearance: none;
+	position: absolute;
+	top: 12px;
+	right: 50px;
+	background-color: #9fc5b6;
+	width: 120px;
+	height: 2px;
+	margin: 6px 12px 0 0;
+	outline: 0;
+	display: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #4b7c68;
+	width: 8px;
+	height: 8px;
 }
 
 #kyouko {
@@ -193,9 +222,24 @@ div, img {
 	color: #4b7c68;
 }
 
-body, html {
+#bgcolor {
+	position: absolute;
 	background-color: #2e4b3f;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #2e4b3f;
+}
+
+html {
 	cursor: url("assets/cursor.png"), auto;
+/*	-webkit-filter:hue-rotate(0deg);
+	-moz-filter:hue-rotate(0deg);
+	-o-filter:hue-rotate(0deg);
+	-ms-filter:hue-rotate(0deg);
+	filter:hue-rotate(0deg);*/
 }
 
 #nav {

@@ -30,7 +30,7 @@ function door() {
 	let door = document.getElementById("door");
 	let audio = new Audio('assets/TOSHINOUKYOUKO.mp3');
 
-	audio.volume = 0.5;
+	audio.volume = 0.8;
 	audio.play();
 
 	door.style.left = "320px";
