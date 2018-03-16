@@ -78,6 +78,44 @@ div, img {
 	background-color: #2e4b3f;
 }
 
+#settings {
+	position: absolute;
+	right: 2px;
+	top: -243px;
+	width: 50px;
+	height: 40px;
+	background-image: url("assets/settings.png");
+	background-repeat: no-repeat;
+	background-position: right 4px top 4px;
+	transition: all 200ms linear;
+}
+
+#settings:hover {
+	width: 200px;
+	background-color: rgba(94,155,131,0.4);
+}
+
+#settings p {
+	position: absolute;
+	opacity: 0;
+	padding-top: 3px;
+	padding-left: 7px;
+	transition: all 200ms linear;
+}
+
+@keyframes settingsText {
+	0% {opacity: 0;}
+	45% {opacity: 0;}
+	100% {opacity: 100;}
+}
+
+#settings:hover p {
+	color: #4b7c68;
+	animation-name: settingsText;
+	animation-duration: 400ms;
+	animation-fill-mode: forwards;
+}
+
 #kyouko {
 	position: absolute;
 	top: -178px;
