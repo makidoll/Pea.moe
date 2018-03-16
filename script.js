@@ -72,15 +72,30 @@ function scrollTitle() {
 	setTimeout("scrollTitle()", 300);
 }; scrollTitle();
 
+// random color
+
+var degree = Math.round(Math.random() * 360);
+function randColor() {
+	document.body.style.filter = "hue-rotate("+degree+"deg)";
+}; randColor();
+
 // hue rotate
 
 document.getElementById("hueslider").addEventListener("input", function(e) {
 	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
+	degree = e.srcElement.value
 })
 
-// random color
 
-function randColor() {
-	let randDegree = Math.round(Math.random() * 360);
-	document.body.style.filter = "hue-rotate("+randDegree+"deg)";
-}; randColor();
+// rainbow mode
+
+function rainbowColor() {
+	if (degree > 360){degree = 1};
+	degree++;
+	setTimeout("rainbowColor()", 5);
+	document.body.style.filter = "hue-rotate("+degree+"deg)";
+}
+
+window.addEventListener("keyup", function(e) {
+	if (e.keyCode == 192) rainbowColor();
+})
