@@ -101,6 +101,7 @@ div, img {
 	padding-top: 3px;
 	padding-left: 7px;
 	transition: all 200ms linear;
+	display: none;
 }
 
 @keyframes settingsText {
@@ -111,6 +112,7 @@ div, img {
 
 #settings:hover p {
 	color: #4b7c68;
+	display: block;
 	animation-name: settingsText;
 	animation-duration: 400ms;
 	animation-fill-mode: forwards;
