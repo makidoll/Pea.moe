@@ -89,13 +89,22 @@ document.getElementById("hueslider").addEventListener("input", function(e) {
 
 // rainbow mode
 
+var rainbowColorActive = false;
+var rainbowColorTimeout = null;
 function rainbowColor() {
+	if (!rainbowColorActive) {
+		clearTimeout(rainbowColorTimeout);
+		return;
+	}
 	if (degree > 360){degree = 1};
 	degree++;
-	setTimeout("rainbowColor()", 5);
+	rainbowColorTimeout = setTimeout("rainbowColor()", 5);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
 }
 
-window.addEventListener("keyup", function(e) {
-	if (e.keyCode == 192) rainbowColor();
+window.addEventListener("keydown", function(e) {
+	if (e.keyCode == 192) {
+		rainbowColorActive = !rainbowColorActive;
+		rainbowColor();
+	}
 })
