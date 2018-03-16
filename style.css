@@ -143,15 +143,6 @@ div, img {
 	height: 10px;
 }
 
-#nav {
-	position: absolute;
-	/*top: 237px;*/
-	top: -8px;
-	left: 2px;
-	font-size: 10px;
-	color: #9fc5b6;
-}
-
 #content {
 	background-color: #9fc5b6;
 	padding: 25px;
@@ -167,10 +158,24 @@ body, html {
 	cursor: url("assets/cursor.png"), auto;
 }
 
+#nav {
+	position: absolute;
+	/*top: 237px;*/
+	top: -8px;
+	left: 2px;
+	font-size: 10px;
+	color: #9fc5b6;
+}
+
 #nav a {
 	color: #9fc5b6;
 	text-decoration: none;
-	padding: 0 22px;
+	padding: 0 30px;
+	transition: all 200ms linear;
+}
+
+#nav a:hover {
+	color: #c1d9cf;
 }
 
 #content a {
