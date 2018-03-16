@@ -70,5 +70,17 @@ function scrollTitle() {
 	scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
 	document.title = scrl;
 	setTimeout("scrollTitle()", 300);
-}
-scrollTitle();
+}; scrollTitle();
+
+// hue rotate
+
+document.getElementById("hueslider").addEventListener("input", function(e) {
+	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
+})
+
+// random color
+
+function randColor() {
+	let randDegree = Math.round(Math.random() * 360);
+	document.body.style.filter = "hue-rotate("+randDegree+"deg)";
+}; randColor();
