@@ -79,15 +79,42 @@ function randColor() {
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
 }; randColor();
 
-// hue rotate
+// hue rotate slider
 
 document.getElementById("hueslider").addEventListener("input", function(e) {
 	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
 	degree = e.srcElement.value
 })
 
+// hue rotate command
+
+var hueDegree = 0
+function hueCommand(){
+	document.body.style.filter = "hue-rotate("+hueDegree+"deg)";
+}
+
 
 // rainbow mode
+
+// var rainbowColorActive = false;
+// var rainbowColorTimeout = null;
+// function rainbowColor() {
+// 	if (!rainbowColorActive) {
+// 		clearTimeout(rainbowColorTimeout);
+// 		return;
+// 	}
+// 	if (degree > 360){degree = 1};
+// 	degree++;
+// 	rainbowColorTimeout = setTimeout("rainbowColor()", 5);
+// 	document.body.style.filter = "hue-rotate("+degree+"deg)";
+// }
+
+// window.addEventListener("keydown", function(e) {
+// 	if (e.keyCode == 192) {
+// 		rainbowColorActive = !rainbowColorActive;
+// 		rainbowColor();
+// 	}
+// })
 
 var rainbowColorActive = false;
 var rainbowColorTimeout = null;
@@ -102,9 +129,25 @@ function rainbowColor() {
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
 }
 
-window.addEventListener("keydown", function(e) {
+function rainbowToggle() {
+	rainbowColorActive = !rainbowColorActive;
+	rainbowColor();
+}
+
+// terminal
+
+window.addEventListener("keyup", function(e) {
 	if (e.keyCode == 192) {
-		rainbowColorActive = !rainbowColorActive;
-		rainbowColor();
+		if (terminal.parent.style.display == "none") {
+			terminal.parent.style.display = "block";
+			terminal.child.input.focus();
+			terminal.child.input.value = "";
+		}
+		else {
+			terminal.parent.style.display = "none";
+		}
+	}
+	if (e.keyCode == 27) {
+		terminal.parent.style.display = "none";
 	}
 })
