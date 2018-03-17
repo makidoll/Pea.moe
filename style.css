@@ -314,7 +314,7 @@ html {
 	resize: none;
 	border: none;
 	line-height: 16px;
-	background-color: rgba(94,155,131,0.7);
+	background-color: rgba(94,155,131,0.85);
 	padding-left: 2px;
 	width: 934px;	
 }
@@ -329,7 +329,7 @@ html {
 	padding-left: 18px;
 	border: none;
 	line-height: 22px;
-	background-color: rgba(94,155,131,0.93);
+	background-color: rgba(94,155,131,0.98);
 	width: 918px;	
 }
 

@@ -36,10 +36,10 @@ var commands = {
 		action: function(c) {
 			rainbowToggle();
 			if (!rainbowColorActive) {
-				c.print("rainbow mode off :(")
+				c.print("rainbow mode off :(");
 			}
 			else {
-				c.print("COLORS!!!")
+				c.print("COLORS!!!");
 			}
 		}
 	},
@@ -48,14 +48,49 @@ var commands = {
 		usage: "(0-360)",
 		action: function(c) {
 			hueCommand(c.msg);
-			c.print("color set to "+c.msg+" degrees")
+			c.print("color set to "+c.msg+" degrees");
 		}		
 	},
+	"animations": {
+		desc: "lists animations you can play",
+		alias: ["animation"],
+		action: function(c) {
+			c.print("here is a list of animations you can play")
+			c.print("    playall: Plays all animations at once");
+			c.print("    akarin: Plays akarin");
+			c.print("    tomato: Plays tomato");
+			c.print("    ayano: Plays ayano");
+		}
+	},
 	"playall": {
-		desc: "Plays all animations",
+		hidden: true,
 		action: function(c) {
 			akarin(); tomato(); door();
-			c.print("I hope you're not wearing headphones")
+			c.print("I hope you're not wearing headphones");
+
+		}
+	},
+	"akarin": {
+		hidden: true,
+		action: function(c) {
+			akarin();
+			c.print("AKARIN!");
+
+		}
+	},
+	"tomato": {
+		hidden: true,
+		action: function(c) {
+			tomato();
+			c.print("TOMATO!");
+
+		}
+	},
+	"ayano": {
+		hidden: true,
+		action: function(c) {
+			door();
+			c.print("TOSHINOU KYOUKO!");
 
 		}
 	},
@@ -63,38 +98,70 @@ var commands = {
 		alias: ["hi", "hey"],
 		hidden: true,
 		action: function(c) {
-			c.print("hi! :)")
+			let result = ['Hello!', 'Hey cutie', 'hi!'][Math.floor(Math.random() * 3)];
+			c.print(result);
 		}
 	},
 	"same": {
 		hidden: true,
 		action: function(c) {
 			if (Math.floor((Math.random() * 5) + 1) > 1){
-				c.print("same")
+				c.print("same");
 			}
 			else {
-				c.print("butts")
+				c.print("butts");
 			}
 		}
 	},
 	"coinflip": {
 		hidden: true,
 		action: function(c) {
-			if (Math.floor(Math.random() * 2) == 0){
-				c.print("heads")
-			}
-			else {
-				c.print("tails")
-			}
+			let result = ['heads', 'tails'][Math.floor(Math.random() * 2)];
+			c.print(result);
 		}
 	},
 	"toast": {
 		alias: ["burnttoast"],
 		hidden: true,
 		action: function(c) {
-			c.print("Toast is a cutie <3")
+			c.print("Toast is a cutie <3");
 		}
-	}
+	},
+	"8ball": {
+		desc: "the all knowing 8ball in electric form. it is never wrong",
+		usage: "(question)",
+		action: function(c) {
+			let result = [
+				"As I see it, yes",
+				"It is certain",
+				"It is decidedly so",
+				"Most likely",
+				"Outlook good",
+				"Signs point to yes",
+				"One would be wise to think so",
+				"Naturally",
+				"Without a doubt",
+				"Yes",
+				"Yes, definitely",
+				"You may rely on it",
+				"Reply hazy, try again",
+				"Ask again later",
+				"Better not tell you now",
+				"Cannot predict now",
+				"Concentrate and ask again",
+				"You know the answer better than I",
+				"Maybe...",
+				"You're kidding, right?",
+				"Don't count on it",
+				"In your dreams",
+				"My reply is no",
+				"My sources say no",
+				"Outlook not so good",
+				"Very doubtful"
+			][Math.floor(Math.random() * 26)];
+			c.print(result);
+		}
+	},
 }
 
 var terminal = new Term({
