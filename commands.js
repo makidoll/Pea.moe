@@ -1,4 +1,5 @@
 //terminal by maki https://maki.cat/
+var username = ""
 var commands = {
 	"help": {
 		desc: "Shows this page",
@@ -14,8 +15,7 @@ var commands = {
 		}
 	},
 	"echo": {
-		desc: "Echo message to the user",
-		usage: "(msg)",
+		hidden: true,
 		action: function(c) {
 			if (!c.msg.trim()) {
 				c.print("You didnt specify a message! Try \"echo (msg)\"");
@@ -29,6 +29,14 @@ var commands = {
 		desc: "Clears the terminal",
 		action: function(c) {
 			c.clear();
+		}
+	},
+	"name": {
+		desc: "set your name",
+		usage: "(name)",
+		action: function(c) {
+			username = c.msg;
+			c.print("Nice to meet you, "+c.msg+"!")
 		}
 	},
 	"rainbow": {
@@ -62,6 +70,21 @@ var commands = {
 			c.print("    ayano: Plays ayano");
 		}
 	},
+	"dumb": {
+		desc: "lists dumb commands",
+		alias: ["dumbstuff"],
+		action: function(c) {
+			c.print("here is a list of dumb shit")
+			c.print("    coinflip: flips a coin");
+			c.print("    8ball: the all knowing 8ball in electric form. it is never wrong");
+			c.print("    fortune: tells you your fortune");
+			c.print("    flirt: flirts with the user");
+			c.print("    lewd: lewds the user");
+			c.print("    insult: insults the user");
+			c.print("    lart: larts the user");
+			c.print("    kill: kills the user");
+		}
+	},
 	"playall": {
 		hidden: true,
 		action: function(c) {
@@ -75,7 +98,9 @@ var commands = {
 		action: function(c) {
 			akarin();
 			c.print("AKARIN!");
-
+			setTimeout(function() {
+				c.print("HI!!!")
+			}, 1700);
 		}
 	},
 	"tomato": {
@@ -91,15 +116,22 @@ var commands = {
 		action: function(c) {
 			door();
 			c.print("TOSHINOU KYOUKO!");
-
 		}
 	},
 	"hello": {
 		alias: ["hi", "hey"],
 		hidden: true,
 		action: function(c) {
-			let result = ['Hello!', 'Hey cutie', 'hi!'][Math.floor(Math.random() * 3)];
-			c.print(result);
+			if (!username == ""){
+				let result = ['Hello ', 'Hey ', 'hi '][Math.floor(Math.random() * 3)];
+				c.print(result+username+"!");
+			}
+			else {
+				let result = ['Hello!', 'Hey cutie!', 'hi!'][Math.floor(Math.random() * 3)];
+				c.print(result)
+				c.print("what\'s your name?")
+				setTimeout(function() {terminalInput("name ")}, 10);
+			}
 		}
 	},
 	"same": {
@@ -113,13 +145,6 @@ var commands = {
 			}
 		}
 	},
-	"coinflip": {
-		hidden: true,
-		action: function(c) {
-			let result = ['heads', 'tails'][Math.floor(Math.random() * 2)];
-			c.print(result);
-		}
-	},
 	"toast": {
 		alias: ["burnttoast"],
 		hidden: true,
@@ -127,46 +152,101 @@ var commands = {
 			c.print("Toast is a cutie <3");
 		}
 	},
-	"8ball": {
-		desc: "the all knowing 8ball in electric form. it is never wrong",
-		usage: "(question)",
+	"coinflip": {
+		hidden: true,
+		desc: "flips a coin",
 		action: function(c) {
-			let result = [
-				"As I see it, yes",
-				"It is certain",
-				"It is decidedly so",
-				"Most likely",
-				"Outlook good",
-				"Signs point to yes",
-				"One would be wise to think so",
-				"Naturally",
-				"Without a doubt",
-				"Yes",
-				"Yes, definitely",
-				"You may rely on it",
-				"Reply hazy, try again",
-				"Ask again later",
-				"Better not tell you now",
-				"Cannot predict now",
-				"Concentrate and ask again",
-				"You know the answer better than I",
-				"Maybe...",
-				"You're kidding, right?",
-				"Don't count on it",
-				"In your dreams",
-				"My reply is no",
-				"My sources say no",
-				"Outlook not so good",
-				"Very doubtful"
-			][Math.floor(Math.random() * 26)];
+			let result = ['heads', 'tails'][Math.floor(Math.random() * 2)];
 			c.print(result);
 		}
 	},
+	"8ball": {
+		hidden: true,
+		desc: "the all knowing 8ball in electric form. it is never wrong",
+		usage: "(question)",
+		action: function(c) {
+			let result = vars.eightball[Math.floor(Math.random() * vars.eightball.length)];
+			c.print(result);
+		}
+	},
+	"fortune": {
+		hidden: true,
+		desc: "Tells you your fortune",
+		action: function(c) {
+			let result = vars.fortune[Math.floor(Math.random() * vars.fortune.length)];
+			c.print(result);
+		}
+	},
+	"lewd": {
+		hidden: true,
+		desc: "lewds the user",
+		action: function(c) {
+			let result = vars.lewd[Math.floor(Math.random() * vars.lewd.length)];
+			if (!username == ""){
+				c.print(result.replace(/\[username\]/gi, username));
+			}
+			else {
+				c.print("You have to set a name first!")
+				c.print("what\'s your name?")
+				setTimeout(function() {terminalInput("name ")}, 10);
+			}
+		}
+	},	
+	"insult": {
+		hidden: true,
+		desc: "Insults the user",
+		action: function(c) {
+			let result = vars.insult[Math.floor(Math.random() * vars.insult.length)];
+			c.print(result);
+		}
+	},
+	"flirt": {
+		hidden: true,
+		desc: "Flirts with the user",
+		action: function(c) {
+			let result = vars.flirt[Math.floor(Math.random() * vars.flirt.length)];
+			c.print(result);
+		}
+	},
+	"lart": {
+		hidden: true,
+		desc: "larts the user",
+		action: function(c) {
+			let result = vars.lart[Math.floor(Math.random() * vars.lart.length)];
+			if (!username == ""){
+				c.print(result.replace(/\[username\]/gi, username));
+			}
+			else {
+				c.print("You have to set a name first!")
+				c.print("what\'s your name?")
+				setTimeout(function() {terminalInput("name ")}, 10);
+			}
+		}
+	},	
+	"kill": {
+		hidden: true,
+		desc: "kills the user",
+		action: function(c) {
+			let result = vars.kill[Math.floor(Math.random() * vars.kill.length)];
+			if (!username == ""){
+				c.print(result.replace(/\[username\]/gi, username));
+			}
+			else {
+				c.print("You have to set a name first!")
+				c.print("what\'s your name?")
+				setTimeout(function() {terminalInput("name ")}, 10);
+			}
+		}
+	},	
 }
 
 var terminal = new Term({
 	id: "term",
-	motd: "Type \"help\" for a list of commands.",
+	motd: [
+		"Welcome!",
+		"Type \"help\" for a list of commands.",
+		"Type \"name (your name)\" to tell me your name!"
+	],
 	error: "Command not found! Try \"help\"",
 	cmds: (function() {
 		let obj = {};

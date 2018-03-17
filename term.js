@@ -12,7 +12,7 @@ var Term = function(obj) {
 
 	// set child properties
 	this.child.output.style.overflowY = "auto";
-	this.child.output.style.whiteSpace = "pre";
+	this.child.output.style.whiteSpace = "pre-wrap";
 	this.child.input.autocomplete = "off";
 	this.child.input.spellcheck = false;
 
@@ -47,13 +47,16 @@ var Term = function(obj) {
 	}
 
 	this.print = function(msg) {
-		document.createElement("p")
 		//this.child.output.innerHTML += this.charify(msg)+"\n";
 		this.child.output.innerHTML += "> "+msg+"\n";
 		this.child.output.scrollTop = this.child.output.scrollHeight;
 	}
 
-	if (obj.motd) this.print(obj.motd);
+	if (obj.motd) {
+		for (var i=0; i<obj.motd.length; i++) {
+			this.print(obj.motd[i]);
+		}
+	}
 
 	// set child events
 	this.child.input.addEventListener("keydown", function(e) {
@@ -69,11 +72,13 @@ var Term = function(obj) {
 				this.setCursorToEnd();
 				break;
 			case 13: // enter
+				let cmd = this.child.input.value.split(" ")[0].toLowerCase();
+				if (cmd.trim() == "") return;
+
 				this.history.push(this.child.input.value);
 				this.historyIndex = 0;
 
 				try {
-					let cmd = this.child.input.value.split(" ")[0].toLowerCase();
 					this.cmds[cmd]({
 						// remember these!
 						print: this.print.bind(this),

@@ -174,3 +174,7 @@ window.addEventListener("keyup", function(e) {
 		}, 300);	
 	}
 })
+
+function terminalInput(changeInput) {
+	terminal.child.input.value = changeInput;
+}
