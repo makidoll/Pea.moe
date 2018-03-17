@@ -141,18 +141,36 @@ function rainbowToggle() {
 
 // terminal
 
-window.addEventListener("keyup", function(e) {
-	if (e.keyCode == 192) {
-		if (terminal.parent.style.display == "none") {
+function terminalToggle() {
+	if (terminal.parent.style.display == "none") {
 			terminal.parent.style.display = "block";
 			terminal.child.input.focus();
 			terminal.child.input.value = "";
+	}
+	else {
+		terminal.parent.style.display = "none";
+	}
+}
+
+window.addEventListener("keyup", function(e) {
+	if (e.keyCode == 192) {
+		terminal.parent.style.opacity = "0";
+		if (terminal.parent.style.display == "none") {
+			terminal.parent.style.display = "block";
+			terminal.child.input.value = "";
+			terminal.child.input.focus();
+			terminal.parent.style.opacity = "1";
 		}
 		else {
-			terminal.parent.style.display = "none";
+			setTimeout(function() {
+				terminal.parent.style.display = "none";
+			}, 300);	
 		}
 	}
 	if (e.keyCode == 27) {
-		terminal.parent.style.display = "none";
+		terminal.parent.style.opacity = "0";
+		setTimeout(function() {
+			terminal.parent.style.display = "none";
+		}, 300);	
 	}
 })
