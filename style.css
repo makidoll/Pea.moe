@@ -266,6 +266,13 @@ html {
 #content a {
 	color: #4b7c68;
 	text-decoration: none;
+	transition: all 200ms;
+}
+
+#content a:hover {
+	color: #70a992;
+	padding-left: 6px;
+
 }
 
 @keyframes fadeIn {

@@ -47,8 +47,7 @@ var commands = {
 		desc: "Change the color",
 		usage: "(0-360)",
 		action: function(c) {
-			hueDegree = c.msg;
-			hueCommand();
+			hueCommand(c.msg);
 			c.print("color set to "+c.msg+" degrees")
 		}		
 	},
@@ -87,6 +86,13 @@ var commands = {
 			else {
 				c.print("tails")
 			}
+		}
+	},
+	"toast": {
+		alias: ["burnttoast"],
+		hidden: true,
+		action: function(c) {
+			c.print("Toast is a cutie <3")
 		}
 	}
 }

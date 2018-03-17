@@ -74,9 +74,11 @@ function scrollTitle() {
 
 // random color
 
-var degree = Math.round(Math.random() * 360);
+var degree = 0
 function randColor() {
+	degree = Math.round(Math.random() * 360);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
+	document.getElementById("hueslider").value = degree;
 }; randColor();
 
 // hue rotate slider
@@ -88,15 +90,16 @@ document.getElementById("hueslider").addEventListener("input", function(e) {
 
 // hue rotate command
 
-var hueDegree = 0
-function hueCommand(){
-	document.body.style.filter = "hue-rotate("+hueDegree+"deg)";
+function hueCommand(newDegree){
+	degree = newDegree
+	document.body.style.filter = "hue-rotate("+degree+"deg)";
+	document.getElementById("hueslider").value = degree;
 }
 
 
 // rainbow mode
 
-// var rainbowColorActive = false;
+// var rainbowColorActive = false;a
 // var rainbowColorTimeout = null;
 // function rainbowColor() {
 // 	if (!rainbowColorActive) {
@@ -118,6 +121,7 @@ function hueCommand(){
 
 var rainbowColorActive = false;
 var rainbowColorTimeout = null;
+var rainbowRelatedSlider = document.getElementById("hueslider");
 function rainbowColor() {
 	if (!rainbowColorActive) {
 		clearTimeout(rainbowColorTimeout);
@@ -127,6 +131,7 @@ function rainbowColor() {
 	degree++;
 	rainbowColorTimeout = setTimeout("rainbowColor()", 5);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
+	rainbowRelatedSlider.value = degree;
 }
 
 function rainbowToggle() {
