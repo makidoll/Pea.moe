@@ -52,6 +52,23 @@ var Term = function(obj) {
 		this.child.output.scrollTop = this.child.output.scrollHeight;
 	}
 
+	this.exec = function(cmd) {
+		try {
+			this.cmds[cmd]({
+				// remember these!
+				print: this.print.bind(this),
+				msg: this.child.input.value.slice(cmd.length+1),
+				clear: function() { this.child.output.innerHTML = "" }.bind(this),
+				bold: this.bold,
+				color: this.color,
+				exec: this.exec.bind(this)
+			});
+		} catch(err) {
+			this.print(this.error);
+			console.log(err);
+		}
+	}
+
 	if (obj.motd) {
 		for (var i=0; i<obj.motd.length; i++) {
 			this.print(obj.motd[i]);
@@ -78,19 +95,7 @@ var Term = function(obj) {
 				this.history.push(this.child.input.value);
 				this.historyIndex = 0;
 
-				try {
-					this.cmds[cmd]({
-						// remember these!
-						print: this.print.bind(this),
-						msg: this.child.input.value.slice(cmd.length+1),
-						clear: function() { this.child.output.innerHTML = "" }.bind(this),
-						bold: this.bold,
-						color: this.color
-					});
-				} catch(err) {
-					this.print(this.error);
-					console.log(err);
-				}
+				this.exec(cmd.trim());
 
 				this.child.input.value = "";
 				break;

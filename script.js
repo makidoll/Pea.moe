@@ -176,5 +176,7 @@ window.addEventListener("keyup", function(e) {
 })
 
 function terminalInput(changeInput) {
-	terminal.child.input.value = changeInput;
+	setTimeout(function() {
+		terminal.child.input.value = changeInput;
+	}, 40);
 }

@@ -35,8 +35,31 @@ var commands = {
 		desc: "set your name",
 		usage: "(name)",
 		action: function(c) {
-			username = c.msg;
-			c.print("Nice to meet you, "+c.msg+"!")
+			username = c.msg.trim();
+			if (!username) { 
+				c.print("What's your name?");
+				terminalInput("name "); return;
+			}
+			c.print("Nice to meet you, "+username+"!")
+		}
+	},
+	"msg": {
+		alias: ["message"],
+		desc: "Send a message to me!!!!",
+		usage: "(message)",
+		action: function(c) {
+			if (!username) { 
+				c.exec("name"); return;
+			}
+			if (!c.msg) {
+				c.print("What's your message?");
+				terminalInput("msg "); return;
+			}
+			let img = document.createElement("div");
+			img.style.backgroundImage = "url(https://maki.cat/discord-message?to=pea&name="+escape(username)+"&message="+escape(c.msg)+")";
+			document.body.appendChild(img);
+			setTimeout(function() { document.body.removeChild(img) }.bind(img), 8000);
+			c.print("Your message might have been sent!");
 		}
 	},
 	"rainbow": {
@@ -44,11 +67,9 @@ var commands = {
 		action: function(c) {
 			rainbowToggle();
 			if (!rainbowColorActive) {
-				c.print("rainbow mode off :(");
+				c.print("rainbow mode off :("); return;
 			}
-			else {
-				c.print("COLORS!!!");
-			}
+			c.print("COLORS!!!");
 		}
 	},
 	"color": {
@@ -125,24 +146,20 @@ var commands = {
 			if (!username == ""){
 				let result = ['Hello ', 'Hey ', 'hi '][Math.floor(Math.random() * 3)];
 				c.print(result+username+"!");
+				return;
 			}
-			else {
-				let result = ['Hello!', 'Hey cutie!', 'hi!'][Math.floor(Math.random() * 3)];
-				c.print(result)
-				c.print("what\'s your name?")
-				setTimeout(function() {terminalInput("name ")}, 10);
-			}
+			let result = ['Hello!', 'Hey cutie!', 'hi!'][Math.floor(Math.random() * 3)];
+			c.print(result);
+			c.exec("name");
 		}
 	},
 	"same": {
 		hidden: true,
 		action: function(c) {
 			if (Math.floor((Math.random() * 5) + 1) > 1){
-				c.print("same");
+				c.print("same"); return;
 			}
-			else {
-				c.print("butts");
-			}
+			c.print("butts");
 		}
 	},
 	"toast": {
@@ -183,13 +200,10 @@ var commands = {
 		action: function(c) {
 			let result = vars.lewd[Math.floor(Math.random() * vars.lewd.length)];
 			if (!username == ""){
-				c.print(result.replace(/\[username\]/gi, username));
+				c.print(result.replace(/\[username\]/gi, username)); return;
 			}
-			else {
-				c.print("You have to set a name first!")
-				c.print("what\'s your name?")
-				setTimeout(function() {terminalInput("name ")}, 10);
-			}
+			c.print("You have to set a name first!");
+			c.exec("name");
 		}
 	},	
 	"insult": {
@@ -213,14 +227,11 @@ var commands = {
 		desc: "larts the user",
 		action: function(c) {
 			let result = vars.lart[Math.floor(Math.random() * vars.lart.length)];
-			if (!username == ""){
-				c.print(result.replace(/\[username\]/gi, username));
+			if (username){
+				c.print(result.replace(/\[username\]/gi, username)); return;
 			}
-			else {
-				c.print("You have to set a name first!")
-				c.print("what\'s your name?")
-				setTimeout(function() {terminalInput("name ")}, 10);
-			}
+			c.print("You have to set a name first!");
+			c.exec("name");
 		}
 	},	
 	"kill": {
@@ -229,13 +240,10 @@ var commands = {
 		action: function(c) {
 			let result = vars.kill[Math.floor(Math.random() * vars.kill.length)];
 			if (!username == ""){
-				c.print(result.replace(/\[username\]/gi, username));
+				c.print(result.replace(/\[username\]/gi, username)); return;
 			}
-			else {
-				c.print("You have to set a name first!")
-				c.print("what\'s your name?")
-				setTimeout(function() {terminalInput("name ")}, 10);
-			}
+			c.print("You have to set a name first!");
+			c.exec("name");
 		}
 	},	
 }
