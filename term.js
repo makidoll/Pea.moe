@@ -1,6 +1,7 @@
 var Term = function(obj) {
 	obj = (obj)? obj: {};
 	this.cmds = (obj.cmds)? obj.cmds: {};
+	this.preprint = (obj.preprint)? obj.preprint: "";
 	this.error = (obj.error)? obj.error: "Command not found!";
 	this.parent = (obj.id)? document.getElementById(obj.id): document.body;
 
@@ -31,13 +32,13 @@ var Term = function(obj) {
 		}.bind(this), 0);
 	}
 
-	// term functions
 	this.charify = function(msg) {
 		return msg.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-			return "&#"+i.charCodeAt(0)+";";
-		});
+			return "&#"+i.charCodeAt(0)+";"
+;		});
 	}
 
+	// term functions
 	this.bold = function(msg) {
 		return "<span style='font-weight: bold;'>"+msg+"</span>";
 	}
@@ -48,8 +49,19 @@ var Term = function(obj) {
 
 	this.print = function(msg) {
 		//this.child.output.innerHTML += this.charify(msg)+"\n";
-		this.child.output.innerHTML += "> "+msg+"\n";
+		this.child.output.innerHTML += this.preprint+msg+"\n";
 		this.child.output.scrollTop = this.child.output.scrollHeight;
+	}
+
+	this.motd = function() {
+		for (var i=0; i<obj.motd.length; i++) {
+			this.print(obj.motd[i]);
+		}
+	}
+
+	this.clear = function() {
+		this.child.output.innerHTML = "";
+		this.child.input.value = "";
 	}
 
 	this.exec = function(cmd) {
@@ -58,7 +70,8 @@ var Term = function(obj) {
 				// remember these!
 				print: this.print.bind(this),
 				msg: this.child.input.value.slice(cmd.length+1),
-				clear: function() { this.child.output.innerHTML = "" }.bind(this),
+				clear: this.clear.bind(this),
+				motd: this.motd.bind(this),
 				bold: this.bold,
 				color: this.color,
 				exec: this.exec.bind(this)
@@ -69,11 +82,7 @@ var Term = function(obj) {
 		}
 	}
 
-	if (obj.motd) {
-		for (var i=0; i<obj.motd.length; i++) {
-			this.print(obj.motd[i]);
-		}
-	}
+	if (obj.motd) this.motd();
 
 	// set child events
 	this.child.input.addEventListener("keydown", function(e) {

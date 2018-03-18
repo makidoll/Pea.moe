@@ -62,6 +62,31 @@ var commands = {
 			c.print("Your message might have been sent!");
 		}
 	},
+	"page": {
+		desc: "Change the page, pagelist to show available pages",
+		usage: "(page)",
+		action: function(c) {
+			switch(c.msg.trim()) {
+				case "home": page("home"); break;
+				case "about": page("about"); break;
+				case "links": page("links"); break;
+				case "secret": page("secret"); break;
+				case "topsecret": page("topsecret"); break;
+				case "": c.print("You need to specify a page"); break;
+				default: c.print("That page doesn't exist, try pagelist");
+			}
+		}
+	},
+	"pagelist": {
+		hidden: true,
+		action: function(c) {
+			c.print("these are the pages you can visit")
+			c.print("    home: the home page")
+			c.print("    about: about me!")
+			c.print("    links: stuff to click on")
+			c.print("    secret: super secret hidden page")
+		}
+	},
 	"rainbow": {
 		desc: "Toggles rainbow mode",
 		action: function(c) {
@@ -183,6 +208,9 @@ var commands = {
 		desc: "the all knowing 8ball in electric form. it is never wrong",
 		usage: "(question)",
 		action: function(c) {
+			if (!c.msg) { 
+			c.print("You need to ask a question!"); return;}
+			c.print(c.msg)
 			let result = vars.eightball[Math.floor(Math.random() * vars.eightball.length)];
 			c.print(result);
 		}
