@@ -45,7 +45,7 @@ var commands = {
 	},
 	"msg": {
 		alias: ["message"],
-		desc: "Send a message to me!!!!",
+		desc: "Sends a message to me on discord!",
 		usage: "(message)",
 		action: function(c) {
 			if (!username) { 
@@ -73,6 +73,7 @@ var commands = {
 		}
 	},
 	"color": {
+		alias: ["hue", "colour"],
 		desc: "Change the color",
 		usage: "(0-360)",
 		action: function(c) {
