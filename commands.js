@@ -98,7 +98,17 @@ var commands = {
 			c.print("    secret: super secret hidden page")
 		}
 	},
+	"earthquake": {
+		hidden: true,
+		alias: ["shake"],
+		desc: "AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH",
+		action: function(c) {
+			c.print("AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH")
+			earthquake();
+		}
+	},
 	"rainbow": {
+		hidden: true,
 		desc: "Toggles rainbow mode",
 		action: function(c) {
 			rainbowToggle();
@@ -116,6 +126,7 @@ var commands = {
 		}
 	},
 	"rainbowspeed": {
+		hidden: true,
 		alias: ["speed"],
 		desc: "Sets the rainbow speed, default is 0.7",
 		usage: "(num)",
@@ -148,28 +159,28 @@ var commands = {
 			}, 2000);
 		}		
 	},
-	"earthquake": {
-		alias: ["shake"],
-		desc: "AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH",
-		action: function(c) {
-			c.print("AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH")
-			earthquake();
-		}
-	},
 	"animations": {
 		desc: "lists animations you can play",
 		alias: ["animation"],
 		action: function(c) {
-			c.print("here is a list of animations you can play")
+			c.print("here is a list of animations you can play");
 			c.print("    playall: Plays all animations at once");
 			c.print("    akarin: Plays akarin");
 			c.print("    tomato: Plays tomato");
 			c.print("    ayano: Plays ayano");
 		}
 	},
+	"fun": {
+		desc: "lists fun commands",
+		action: function(c) {
+			c.print("here is a list of fun stuff!");
+			c.print("    rainbow: toggles rainbow mode")
+			c.print("    rainbowspeed (num): sets the rainbow speed, default is 0.7 ")
+			c.print("    earthquake: AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH");
+		}
+	},
 	"dumb": {
 		desc: "lists dumb commands",
-		alias: ["dumbstuff"],
 		action: function(c) {
 			c.print("here is a list of dumb shit")
 			c.print("    coinflip: flips a coin");
