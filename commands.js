@@ -175,7 +175,7 @@ var commands = {
 		action: function(c) {
 			c.print("here is a list of fun stuff!");
 			c.print("    rainbow: toggles rainbow mode")
-			c.print("    rainbowspeed (num): sets the rainbow speed, default is 0.7 ")
+			c.print("    rainbowspeed (num): sets the rainbow speed, default is 1 ")
 			c.print("    earthquake: AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH");
 		}
 	},

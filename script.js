@@ -122,7 +122,7 @@ document.getElementById("hueslider").addEventListener("input", function(e) {
 var rainbowColorActive = false;
 var rainbowColorTimeout = null;
 var rainbowRelatedSlider = document.getElementById("hueslider");
-var rainbowStep = 0.7;
+var rainbowStep = 1;
 
 function rainbowColor() {
 	if (!rainbowColorActive) {
@@ -142,6 +142,8 @@ function rainbowToggle() {
 	rainbowColorActive = !rainbowColorActive;
 	rainbowColor();
 }
+
+// earthquake
 
 function earthquake() {
 	let page = document.getElementById("page");
