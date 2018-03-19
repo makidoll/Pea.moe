@@ -111,8 +111,25 @@ var commands = {
 		block_action: function(c) {
 			c.print("get out dont use firefuck")
 			setTimeout(function() {
-				document.location = "https://maki.cat/feuerfuchs/";
+				fuckFirefox(5)
 			}, 2000);
+		}
+	},
+	"rainbowspeed": {
+		alias: ["speed"],
+		desc: "Sets the rainbow speed, default is 0.7",
+		usage: "(num)",
+		action: function(c) {
+			if (!c.msg){ c.print("You need to specify the speed, try speed (num)"); return; }
+			let msgInt = parseInt(c.msg);
+			rainbowSpeed(msgInt);
+		},
+		block: ["firefox"],
+		block_action: function(c) {
+			c.print("why are you trying this you can't even use rainbow you firecuck")
+			setTimeout(function() {
+				fuckFirefox(5)
+			}, 3000);
 		}
 	},
 	"color": {
@@ -127,9 +144,17 @@ var commands = {
 		block_action: function(c) {
 			c.print("firefox more like firegay")
 			setTimeout(function() {
-				document.location = "https://maki.cat/feuerfuchs/";
+				fuckFirefox(5)
 			}, 2000);
 		}		
+	},
+	"earthquake": {
+		alias: ["shake"],
+		desc: "AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH",
+		action: function(c) {
+			c.print("AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH")
+			earthquake();
+		}
 	},
 	"animations": {
 		desc: "lists animations you can play",

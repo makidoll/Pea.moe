@@ -122,21 +122,36 @@ document.getElementById("hueslider").addEventListener("input", function(e) {
 var rainbowColorActive = false;
 var rainbowColorTimeout = null;
 var rainbowRelatedSlider = document.getElementById("hueslider");
+var rainbowStep = 0.7;
+
 function rainbowColor() {
 	if (!rainbowColorActive) {
 		clearTimeout(rainbowColorTimeout);
 		return;
 	}
 	if (degree > 360){degree = 1};
-	degree++;
-	rainbowColorTimeout = setTimeout("rainbowColor()", 5);
+	degree = degree + rainbowStep;
+	rainbowColorTimeout = setTimeout("rainbowColor()", 1);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
 	rainbowRelatedSlider.value = degree;
 }
 
+function rainbowSpeed(step) {rainbowStep = step;}
+
 function rainbowToggle() {
 	rainbowColorActive = !rainbowColorActive;
 	rainbowColor();
+}
+
+function earthquake() {
+	let page = document.getElementById("page");
+	page.style.transform = ("rotate(0.3deg)");
+	setTimeout(function() {
+		page.style.transform = ("rotate(-0.3deg)");
+	}, 20);
+	setTimeout(function() {
+		earthquake()
+	}, 40);
 }
 
 // terminal
@@ -203,4 +218,14 @@ var cookie = {
     }
 };
 
-//name
+// fuck firefox
+
+function fuckFirefox(chance) {
+	if (typeof InstallTrigger !== 'undefined'){
+		if (Math.floor((Math.random() * chance) + 1) == 1){
+			document.location = "https://maki.cat/feuerfuchs/";
+		}
+	}
+}
+
+fuckFirefox(30)

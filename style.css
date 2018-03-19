@@ -292,6 +292,7 @@ html {
 	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 	animation-fill-mode: forwards;
+	transition: all 20ms linear;
 }
 
 .indent {
