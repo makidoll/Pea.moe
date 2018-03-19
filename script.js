@@ -129,10 +129,8 @@ function rainbowColor() {
 		clearTimeout(rainbowColorTimeout);
 		return;
 	}
-	if (rainbowStep >= 10){
-		if (degree >= 36000){degree = 1};
-	}
-	if (degree >= 360){degree = 1};
+	if (rainbowStep >= 10) {if (degree >= 36000){degree = 1};}
+	else {if (degree >= 360){degree = 1};}
 	degree = degree + rainbowStep;
 	rainbowColorTimeout = setTimeout("rainbowColor()", 1);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
@@ -150,8 +148,15 @@ function rainbowToggle() {
 
 function earthquake() {
 	let page = document.getElementById("page");
+	let ayanoe = document.getElementById("ayano");
+	let mascot = document.getElementById("mascot");
 	page.style.transform = ("rotate(0.3deg)");
+	ayano.style.bottom = ("0px");
+	mascot.style.bottom = ("-100px");
+
 	setTimeout(function() {
+		mascot.style.bottom = ("100px");
+		ayano.style.bottom = ("-4px");
 		page.style.transform = ("rotate(-0.3deg)");
 	}, 20);
 	setTimeout(function() {
