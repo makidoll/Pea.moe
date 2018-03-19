@@ -53,7 +53,8 @@ var commands = {
 		usage: "(message)",
 		action: function(c) {
 			if (!username) { 
-				c.exec("name"); return;
+				c.print("What's your name?");
+				terminalInput("name "); return;
 			}
 			if (!c.msg) {
 				c.print("What's your message?");
