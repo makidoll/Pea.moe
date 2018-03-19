@@ -1,5 +1,6 @@
 //terminal by maki https://maki.cat/
 var username = ""
+var msgTimer = false;
 var commands = {
 	"help": {
 		desc: "Shows this page",
@@ -35,11 +36,14 @@ var commands = {
 		desc: "set your name",
 		usage: "(name)",
 		action: function(c) {
-			username = c.msg.trim();
-			if (!username) { 
+			if (!c.msg) { 
+				if (!username) {
 				c.print("What's your name?");
 				terminalInput("name "); return;
+				}
+				c.print("Hi "+username+"! Type name (name) to change you name."); return;
 			}
+			username = c.msg.trim();
 			c.print("Nice to meet you, "+username+"!")
 		}
 	},
@@ -55,11 +59,17 @@ var commands = {
 				c.print("What's your message?");
 				terminalInput("msg "); return;
 			}
-			let img = document.createElement("div");
-			img.style.backgroundImage = "url(https://maki.cat/discord-message?to=pea&name="+escape(username)+"&message="+escape(c.msg)+")";
-			document.body.appendChild(img);
-			setTimeout(function() { document.body.removeChild(img) }.bind(img), 8000);
-			c.print("Your message might have been sent!");
+			if (!msgTimer) {
+				msgTimer = true;
+				let img = document.createElement("div");
+				//eeee don't abuse please
+				img.style.backgroundImage = "url(https://maki.cat/discord-message?to=pea&name="+escape(username)+"&message="+escape(c.msg)+")";
+				document.body.appendChild(img);
+				setTimeout(function() { document.body.removeChild(img) }.bind(img), 8000);
+				c.print("Your message might have been sent!");
+				setTimeout(function() { msgTimer = false}, 2500); return;
+			}
+			c.print("AAAAAHHH Please don't spam me!!")
 		}
 	},
 	"page": {
@@ -95,6 +105,13 @@ var commands = {
 				c.print("rainbow mode off :("); return;
 			}
 			c.print("COLORS!!!");
+		},
+		block: ["firefox"],
+		block_action: function(c) {
+			c.print("get out dont use firefuck")
+			setTimeout(function() {
+				document.location = "https://maki.cat/feuerfuchs/";
+			}, 2000);
 		}
 	},
 	"color": {
@@ -104,6 +121,13 @@ var commands = {
 		action: function(c) {
 			hueCommand(c.msg);
 			c.print("color set to "+c.msg+" degrees");
+		},
+		block: ["firefox"],
+		block_action: function(c) {
+			c.print("firefox more like firegay")
+			setTimeout(function() {
+				document.location = "https://maki.cat/feuerfuchs/";
+			}, 2000);
 		}		
 	},
 	"animations": {
@@ -284,18 +308,46 @@ var terminal = new Term({
 		"Type \"help\" for a list of commands.",
 		"Type \"name (your name)\" to tell me your name!"
 	],
+	block: {
+		"firefox": "fuck you use a better browser"
+	},
 	error: "Command not found! Try \"help\"",
 	cmds: (function() {
 		let obj = {};
 		for (var i=0; i<Object.keys(commands).length; i++) {
 			let key = Object.keys(commands)[i];
+
+			// let block happen
+			let block = false;
+			if (commands[key].block) {
+				let blocks = commands[key].block;
+				if (blocks.includes("opera")) if ((!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0) block = true;
+				if (blocks.includes("firefox")) if (typeof InstallTrigger !== 'undefined') block = true;
+				if (blocks.includes("safari")) if (/constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification))) block = true;
+				if (blocks.includes("ie")) if (/*@cc_on!@*/false || !!document.documentMode) block = true;
+				if (blocks.includes("edge")) if (!isIE && !!window.StyleMedia) block = true;
+				if (blocks.includes("chrome")) if (!!window.chrome && !!window.chrome.webstore) block = true;
+				if (blocks.includes("blink")) if ((isChrome || isOpera) && !!window.CSS) block = true;
+			}
+
+			// set allias
 			if (commands[key].alias) {
 				for (var j=0; j<commands[key].alias.length; j++) {
-					obj[commands[key].alias[j]] = commands[key].action;
+					if (block) {
+						obj[commands[key].alias[j]] = commands[key].block_action;
+					} else {
+						obj[commands[key].alias[j]] = commands[key].action;
+					}
 				}
 			}
-			obj[key] = commands[key].action;
-		}; return obj;    
+
+			// set action
+			if (block) { 
+				obj[key] = commands[key].block_action;
+			} else {
+				obj[key] = commands[key].action;
+			}
+		}; return obj;	
 	})()
 });
 

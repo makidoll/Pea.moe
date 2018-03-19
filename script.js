@@ -65,20 +65,29 @@ setTimeout(function(){
 
 // scrolling title
 
-var scrl = "AAAAaaaaaAAaaAaAAAAAaaaAAAAAAaaaaAAAAAAAaaaaaAAAaAaaAaAaaaAAaaaaa";
+var scrl = "AAAAaaaaaAAaaAaAAAAAaaaAAAAAAaaaaAAAAAAAaaaaaAAAaAaaAaAaaaAAaaaaaజ్ఞా";
 function scrollTitle() {
 	scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
 	document.title = scrl;
 	setTimeout("scrollTitle()", 300);
 }; scrollTitle();
 
-// random color
+//fuck firefox
+
+// hue rotate command
 
 var degree = 0
-function randColor() {
-	degree = Math.round(Math.random() * 360);
+function hueCommand(newDegree){
+	if (typeof InstallTrigger !== 'undefined') return; // firefox
+	degree = newDegree
 	document.body.style.filter = "hue-rotate("+degree+"deg)";
 	document.getElementById("hueslider").value = degree;
+}
+
+// random color
+
+function randColor() {
+	hueCommand(Math.round(Math.random() * 360));
 }; randColor();
 
 // hue rotate slider
@@ -87,15 +96,6 @@ document.getElementById("hueslider").addEventListener("input", function(e) {
 	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
 	degree = e.srcElement.value
 })
-
-// hue rotate command
-
-function hueCommand(newDegree){
-	degree = newDegree
-	document.body.style.filter = "hue-rotate("+degree+"deg)";
-	document.getElementById("hueslider").value = degree;
-}
-
 
 // rainbow mode
 
@@ -180,3 +180,27 @@ function terminalInput(changeInput) {
 		terminal.child.input.value = changeInput;
 	}, 40);
 }
+
+// cookies!
+
+var cookie = {
+    get: function(key) {
+        let c = document.cookie.split("; ");
+        for (var i=0; i<c.length; i++) {
+            let s = c[i].split("=");
+            if (s[0] == key) return s[1];
+        }
+    },
+    set: function(key, value) {
+        document.cookie = key+"="+value+"; expires="+(new Date((Math.pow(2, 31)-1)*1000).toUTCString());
+    },
+    clear: function() {
+        let c = document.cookie.split("; ");
+        for (var i=0; i<c.length; i++) {
+            let s = c[i].split("=");
+            document.cookie = s[0]+"=; expires="+(new Date().toUTCString());
+        }
+    }
+};
+
+//name
