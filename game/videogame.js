@@ -28,7 +28,7 @@ function die() {
 		}
 		gameover.style.opacity = "1";
 		setTimeout(function() {
-			document.location = "index.html";
+			document.location = "https://pea.moe/";
 		}, 1000)
 	}, 20)
 }
