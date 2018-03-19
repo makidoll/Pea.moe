@@ -129,7 +129,10 @@ function rainbowColor() {
 		clearTimeout(rainbowColorTimeout);
 		return;
 	}
-	if (degree > 36000){degree = 1};
+	if (rainbowStep >= 10){
+		if (degree >= 36000){degree = 1};
+	}
+	if (degree >= 360){degree = 1};
 	degree = degree + rainbowStep;
 	rainbowColorTimeout = setTimeout("rainbowColor()", 1);
 	document.body.style.filter = "hue-rotate("+degree+"deg)";

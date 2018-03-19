@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cool video game made by me</title>
+	<style type="text/css">
+		@font-face {
+			font-family: "pixel";
+			src: url("assets/04b_03.ttf") format("truetype");
+		}
+		body {
+			background-color: #4b7c68;
+		}
+		#player {
+			position: absolute; margin: auto;
+			bottom: 37vh;
+			left: 5vh;
+			width: 5vh;
+			height: 13vh;
+			background-color: #9fc5b6;
+		}
+		#cliff {
+			position: absolute; margin: auto;
+			bottom: 0vh;
+			left: 0vh;
+			height: 40vh;
+			width: 70vh;
+			background-image: url("game/cliff.png");
+			background-size: 100%;
+			image-rendering: pixelated;
+			image-rendering: crisp-edges;
+			image-rendering: optimize-contrast;
+			image-rendering: optimizeSpeed;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+		}
+		#gameover {
+			position: absolute; margin: auto;
+			bottom: 0; left: 0; right: 0; top: 0;
+			background-color: rgba(0,0,0,0.4);
+			transition: all 200ms linear;
+		}
+		#text {
+			position: absolute; margin: auto;
+			bottom: 40vh; left: 0; right: 0; top: 40vh;
+			background-color: rgba(0,0,0,0.4);
+		}
+		#text p {
+			position: relative;
+			top: 25%;
+			bottom: 25%;
+			left: 0; right: 0;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			font-family: pixel;
+			font-size: 10vh;
+			text-align: center;
+			color: #27473a;
+		}
+	</style>
+</head>
+<body>
+	<div id="player"></div>
+	<div id="cliff"></div>
+	<div id="gameover" style="opacity:0">
+		<div id="text">
+			<p>
+				YOU DIED
+			</p>
+		</div>
+	</div>
+<script src="game/videogame.js"></script>
+</body>
+</html>

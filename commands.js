@@ -335,7 +335,16 @@ var commands = {
 			c.print("You have to set a name first!");
 			c.exec("name");
 		}
-	},	
+	},
+	"game": {
+		desc: "play a really cool video game made by me",
+		action: function(c) {
+			c.print("have fun!")
+			setTimeout( function() {
+				document.location = "videogame.html";
+			}, 500)
+		}
+	}
 }
 
 var terminal = new Term({
