@@ -1,14 +1,15 @@
+var gameover = document.getElementById("gameover");
 var playerChar = document.getElementById("player");
 var playerAlive = true;
 var playerPos = 5;
 var playerHeight = 37;
 var playerSpeed = 1;
 var score = 0;
-var gameover = document.getElementById("gameover");
 
 window.addEventListener("keydown", function(e) {
 	if (e.keyCode == 37 || e.keyCode ==  65) {
 		//left
+		heightManager();
 		playerSpeed = 1;
 		if (playerPos <= 0) { return;}
 		playerPos--
@@ -16,7 +17,8 @@ window.addEventListener("keydown", function(e) {
 	}
 	if (e.keyCode == 39 || e.keyCode == 68) {
 		//right
-		if (playerPos >= 68 && playerAlive) { die();}
+		heightManager();
+		if (playerPos >= 66 && playerAlive) { die();}
 		playerPos = playerPos + playerSpeed
 		playerChar.style.left = playerPos+"vh"
 	}
@@ -38,6 +40,29 @@ window.addEventListener("keyup", function(e) {
 	}
 })
 
+function heightManager() {
+	if (playerPos >= 18 && playerPos <=31){
+		playerHeight = 36
+		playerChar.style.bottom = playerHeight+"vh"
+		return;
+	}
+	if (playerPos >= 31 && playerPos <=46){
+		playerHeight = 35
+		playerChar.style.bottom = playerHeight+"vh"
+		return;
+	}
+	if (playerPos >= 46 && playerPos <=55){
+		playerHeight = 33
+		playerChar.style.bottom = playerHeight+"vh"
+		return;
+	}
+	if (playerPos >= 55 && playerPos <=66){
+		playerHeight = 30
+		playerChar.style.bottom = playerHeight+"vh"
+		return;
+	}
+}
+
 function die() {
 	if (playerHeight > -13) {
 		setTimeout(function() {
@@ -51,12 +76,24 @@ function die() {
 	}
 	playerAlive = false;
 	gameover.style.opacity = "1";
-	score = playerPos - 69;
+	score = playerPos - 66;
 	updateScore()
 }
 function updateScore() {
 	document.getElementById("score").innerHTML = score;
 }
+
+//rand color
+var degree = 0
+function hueCommand(newDegree){
+	if (typeof InstallTrigger !== 'undefined') return; // firefox
+	degree = newDegree
+	document.body.style.filter = "hue-rotate("+degree+"deg)";
+}
+
+function randColor() {
+	hueCommand(Math.round(Math.random() * 360));
+}; randColor();
 
 //rainbow
 
