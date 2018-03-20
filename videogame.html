@@ -40,15 +40,15 @@
 			background-color: rgba(0,0,0,0.4);
 			transition: all 200ms linear;
 		}
-		#text {
+		#deathbox {
 			position: absolute; margin: auto;
-			bottom: 40vh; left: 0; right: 0; top: 40vh;
+			bottom: 30vh; left: 0; right: 0; top: 30vh;
 			background-color: rgba(0,0,0,0.4);
 		}
-		#text p {
+		#deathtext {
 			position: relative;
-			top: 25%;
-			bottom: 25%;
+			top: 15%;
+			bottom: 35%;
 			left: 0; right: 0;
 			padding: 0;
 			margin: 0;
@@ -58,16 +58,58 @@
 			text-align: center;
 			color: #27473a;
 		}
+		#scoretext {
+			position: relative;
+			top: 15%;
+			bottom: 35%;
+			left: 0; right: 0;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			font-family: pixel;
+			font-size: 5vh;
+			text-align: center;
+			color: #27473a;
+		}
+		#score {
+			position: relative;
+			top: 15%;
+			bottom: 35%;
+			left: 0; right: 0;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			font-family: pixel;
+			font-size: 5vh;
+			text-align: center;
+			color: #27473a;
+		}
+		#keys {
+			position: relative;
+			top: 15%;
+			bottom: 35%;
+			left: 0; right: 0;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			font-family: pixel;
+			font-size: 5vh;
+			text-align: center;
+			color: #27473a;
+		}
 	</style>
 </head>
 <body>
 	<div id="player"></div>
 	<div id="cliff"></div>
 	<div id="gameover" style="opacity:0">
-		<div id="text">
-			<p>
+		<div id="deathbox">
+			<p id="deathtext">
 				YOU DIED
 			</p>
+			<p id= scoretext>score:</p>
+			<p id="score">ss</p>
+			<p id="keys">ESC: return<br>ENTER: retry</p>
 		</div>
 	</div>
 <script src="game/videogame.js"></script>
