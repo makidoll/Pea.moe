@@ -1,7 +1,7 @@
 var Term = function(obj) {
 	obj = (obj)? obj: {};
 	this.cmds = (obj.cmds)? obj.cmds: {};
-	this.preprint = (obj.preprint)? obj.preprint: "";
+	this.preprint = (obj.preprint)? obj.preprint: "> ";
 	this.error = (obj.error)? obj.error: "Command not found!";
 	this.parent = (obj.id)? document.getElementById(obj.id): document.body;
 
