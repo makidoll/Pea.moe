@@ -41,6 +41,7 @@ window.addEventListener("keyup", function(e) {
 })
 
 function heightManager() {
+	if (!playerAlive){return;}
 	if (playerPos >= 18 && playerPos <=31){
 		playerHeight = 36
 		playerChar.style.bottom = playerHeight+"vh"
@@ -64,6 +65,7 @@ function heightManager() {
 }
 
 function die() {
+	playerAlive = false;
 	if (playerHeight > -13) {
 		setTimeout(function() {
 				playerHeight--
@@ -74,7 +76,6 @@ function die() {
 		}, 20)
 		return;
 	}
-	playerAlive = false;
 	gameover.style.opacity = "1";
 	score = playerPos - 66;
 	updateScore()
