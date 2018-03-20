@@ -24,7 +24,7 @@ window.addEventListener("keydown", function(e) {
 		document.location = "https://pea.moe/";
 	}
 	if (e.keyCode == 13) {
-		document.location = "https://pea.moe/video";
+		document.location = "https://pea.moe/videogame.html";
 	}
 })
 
