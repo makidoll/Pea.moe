@@ -26,6 +26,9 @@ window.addEventListener("keydown", function(e) {
 	if (e.keyCode == 13) {
 		document.location = "https://pea.moe/videogame.html";
 	}
+	if (e.keyCode == 32) {
+		rainbowToggle();
+	}
 })
 
 window.addEventListener("keyup", function(e) {
@@ -53,4 +56,30 @@ function die() {
 }
 function updateScore() {
 	document.getElementById("score").innerHTML = score;
+}
+
+//rainbow
+
+var degree = 0;
+var rainbowColorActive = false;
+var rainbowColorTimeout = null;
+var rainbowStep = 1;
+
+function rainbowColor() {
+	if (!rainbowColorActive) {
+		clearTimeout(rainbowColorTimeout);
+		return;
+	}
+	if (rainbowStep >= 10) {if (degree >= 36000){degree = 1};}
+	else {if (degree >= 360){degree = 1};}
+	degree = degree + rainbowStep;
+	rainbowColorTimeout = setTimeout("rainbowColor()", 1);
+	document.body.style.filter = "hue-rotate("+degree+"deg)";
+}
+
+function rainbowSpeed(step) {rainbowStep = step;}
+
+function rainbowToggle() {
+	rainbowColorActive = !rainbowColorActive;
+	rainbowColor();
 }

@@ -8,8 +8,13 @@
 			src: url("assets/04b_03.ttf") format("truetype");
 		}
 		body {
-			background-color: #4b7c68;
 			overflow: hidden;
+			image-rendering: pixelated;
+			image-rendering: crisp-edges;
+			image-rendering: optimize-contrast;
+			image-rendering: optimizeSpeed;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
 		}
 		#player {
 			position: absolute; margin: auto;
@@ -27,12 +32,7 @@
 			width: 70vh;
 			background-image: url("game/cliff.png");
 			background-size: 100%;
-			image-rendering: pixelated;
-			image-rendering: crisp-edges;
-			image-rendering: optimize-contrast;
-			image-rendering: optimizeSpeed;
-			image-rendering: -moz-crisp-edges;
-			image-rendering: -o-crisp-edges;
+			background-position: 0px 0px;
 		}
 		#gameover {
 			position: absolute; margin: auto;
@@ -84,7 +84,7 @@
 			text-align: center;
 			color: #27473a;
 		}
-		#keys {
+		#scorekeys {
 			position: relative;
 			top: 15%;
 			bottom: 35%;
@@ -97,9 +97,51 @@
 			text-align: center;
 			color: #27473a;
 		}
+		#background {
+			position: absolute; margin: auto;
+			top: 0; bottom: 0; left: 0; right: 0;
+			background-color: #4b7c68;
+		}
+		@keyframes foga {
+			0% {background-position: 0vh 0vh}
+			100% {background-position: 10vh 0vh}
+		}
+		#foga {
+			position: absolute; margin: auto;
+			bottom: 0; left: 0; right: 0;
+			height: 10vh;
+			width: 100%;
+			background-image: url("game/fog.png");
+			background-size: 10vh;
+			background-position: 0vh 0vh;
+			animation-name: foga;
+			animation-duration: 1500ms;
+			animation-direction: normal;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes fogb {
+			0% {background-position: 0vh 0vh}
+			100% {background-position: 10vh 0vh}
+		}
+		#fogb {
+			position: absolute; margin: auto;
+			bottom: -7vh; left: 0; right: 0;
+			height: 10vh;
+			width: 100%;
+			background-image: url("game/fog.png");
+			background-size: 10vh;
+			background-position: 0vh 0vh;
+			animation-name: fogb;
+			animation-duration: 1800ms;
+			animation-direction: normal;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
 	</style>
 </head>
 <body>
+	<div id="background"></div>
 	<div id="player"></div>
 	<div id="cliff"></div>
 	<div id="gameover" style="opacity:0">
@@ -109,9 +151,11 @@
 			</p>
 			<p id= scoretext>score:</p>
 			<p id="score">you're not supposed to see this</p>
-			<p id="keys">ESC: return<br>ENTER: retry</p>
+			<p id="scorekeys">ESC: return<br>ENTER: retry</p>
 		</div>
 	</div>
+	<div id="foga"></div>
+	<div id="fogb"></div>
 <script src="game/videogame.js"></script>
 </body>
 </html>
