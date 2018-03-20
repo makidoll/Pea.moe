@@ -6,6 +6,8 @@ var playerHeight = 37;
 var playerSpeed = 1;
 var score = 0;
 
+// input
+
 window.addEventListener("keydown", function(e) {
 	if (e.keyCode == 37 || e.keyCode ==  65) {
 		//left
@@ -33,12 +35,16 @@ window.addEventListener("keydown", function(e) {
 	}
 })
 
+// "momentum"
+
 window.addEventListener("keyup", function(e) {
 	if (e.keyCode == 39 || e.keyCode == 68){
 		playerSpeed++
 		if (playerPos >= 68 && playerAlive) { die();}
 	}
 })
+
+// keeps player from floating on the edge
 
 function heightManager() {
 	if (!playerAlive){return;}
@@ -64,6 +70,8 @@ function heightManager() {
 	}
 }
 
+// kills the player and records the score
+
 function die() {
 	playerAlive = false;
 	if (playerHeight > -13) {
@@ -82,9 +90,13 @@ function die() {
 }
 function updateScore() {
 	document.getElementById("score").innerHTML = score;
+	if (score >= 350){
+		rainbowToggle();
+	}
 }
 
-//rand color
+// rand color
+
 var degree = 0
 function hueCommand(newDegree){
 	if (typeof InstallTrigger !== 'undefined') return; // firefox
@@ -96,7 +108,7 @@ function randColor() {
 	hueCommand(Math.round(Math.random() * 360));
 }; randColor();
 
-//rainbow
+// rainbow
 
 var degree = 0;
 var rainbowColorActive = false;
