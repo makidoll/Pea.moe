@@ -104,7 +104,7 @@ var commands = {
 		desc: "AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH",
 		action: function(c) {
 			c.print("AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH")
-			earthquake();
+			earthquakeToggle();
 		}
 	},
 	"rainbow": {

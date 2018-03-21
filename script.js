@@ -146,6 +146,7 @@ function rainbowToggle() {
 
 // earthquake
 
+var earthquakeActive = false
 function earthquake() {
 	let page = document.getElementById("page");
 	let ayanoe = document.getElementById("ayano");
@@ -160,8 +161,21 @@ function earthquake() {
 		page.style.transform = ("rotate(-0.3deg)");
 	}, 20);
 	setTimeout(function() {
-		earthquake()
+		if (earthquakeActive) {
+			earthquake()
+			return;
+		}
+		page.style.transform = ("rotate(0deg)");
+		ayano.style.bottom = ("0px");
+		mascot.style.bottom = ("5px");
 	}, 40);
+}
+
+// earthquake toggle
+
+function earthquakeToggle() {
+	earthquakeActive = !earthquakeActive;
+	earthquake();
 }
 
 // terminal

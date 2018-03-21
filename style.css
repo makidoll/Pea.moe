@@ -3,8 +3,8 @@
 	src: url("assets/04b_03.ttf") format("truetype");
 }
 
-::selection { background: #b0cfc3; } /* WebKit/Blink Browsers */
-::-moz-selection { background: #b0cfc3; } /* Gecko Browsers */
+::selection { background: #b0cfc3; }
+::-moz-selection { background: #b0cfc3; }
 
 p {
 	font-family: pixelfont;
@@ -154,17 +154,7 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 154px;
 	height: 194px;
 	background-image: url("assets/kyouko.gif");
-	/*transition: all 100ms linear;*/
 }
-
-/*#kyouko:hover {
-	background-image: url("assets/kyouko2.png");
-}
-*/
-/*@keyframes mascotFall {
-	0% {bottom: 100vh;}
-	100% {bottom: 5px;}
-}*/
 
 #ayano {
 	position: absolute; margin: auto;
@@ -193,11 +183,6 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 207px;
 	height: 542px;
 	background-image: url("assets/mascot.png");
-/*	animation-name: mascotFall;
-	animation-duration: 1s;
-	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
-	animation-fill-mode: forwards;
-	animation-delay: 200ms;*/
 	transition: all 1s cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
