@@ -48,6 +48,11 @@ window.addEventListener("keyup", function(e) {
 
 function heightManager() {
 	if (!playerAlive){return;}
+	if (playerPos >= 0 && playerPos <=18){
+		playerHeight = 37
+		playerChar.style.bottom = playerHeight+"vh"
+		return;
+	}
 	if (playerPos >= 18 && playerPos <=31){
 		playerHeight = 36
 		playerChar.style.bottom = playerHeight+"vh"
