@@ -32,6 +32,12 @@ var commands = {
 			c.clear();
 		}
 	},
+	"motd": {
+		desc: "Shows the message of the day",
+		action: function(c) {
+			c.motd();
+		}
+	},
 	"name": {
 		desc: "set your name",
 		usage: "(name)",
