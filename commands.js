@@ -30,6 +30,7 @@ var commands = {
 		desc: "Clears the terminal",
 		action: function(c) {
 			c.clear();
+			c.motd();
 		}
 	},
 	"motd": {
