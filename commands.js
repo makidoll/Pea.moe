@@ -348,7 +348,17 @@ var commands = {
 		action: function(c) {
 			c.print("have fun!")
 			setTimeout( function() {
-				document.location = "videogame.html";
+				document.location = "/game";
+			}, 500)
+		}
+	},
+	"gamenojs": {
+		hidden: true,
+		desc: "play a my really cool videogame without js",
+		action: function(c) {
+			c.print("have fun!")
+			setTimeout( function() {
+				document.location = "/game/nojs.html";
 			}, 500)
 		}
 	}

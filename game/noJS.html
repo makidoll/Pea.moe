@@ -1,0 +1,160 @@
+	<head><style type="text/css">
+		html {
+			background-color: black;
+			overflow: hidden;
+			image-rendering: pixelated;
+			image-rendering: crisp-edges;
+			image-rendering: optimize-contrast;
+			image-rendering: optimizeSpeed;
+			image-rendering: -moz-crisp-edges;
+			image-rendering: -o-crisp-edges;
+		}
+		#cliff {
+			position: absolute; margin: auto;
+			bottom: 0vh;
+			left: 0vh;
+			height: 40vh;
+			width: 70vh;
+			background-image: url('cliff.png');
+		background-size: 100%;
+		background-position: 0px 0px;
+	}
+	#deathbox {
+		position: absolute; margin: auto;
+		bottom: 40vh; left: 0; right: 0; top: 40vh;
+		background-color: rgba(0,0,0,0.4);
+		animation: b 5200ms linear;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+	#deathtext {
+		position: relative;
+		top: 20%;
+		bottom: 20%;
+		left: 0; right: 0;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		font-size: 19vh;
+		text-align: center;
+		color: #9fc5b6;
+		opacity: 0.6;
+		font-family: "Cambria", sans-serif;
+		letter-spacing: 1vh;
+		line-height: 11.6vh;
+		white-space: nowrap;
+	}
+	#background {
+		position: absolute; margin: auto;
+		top: 0; bottom: 0; left: 0; right: 0;
+		background-color: #4b7c68;
+	}
+	@keyframes foga {
+		0% {background-position: 0vh 0vh}
+		100% {background-position: 10vh 0vh}
+	}
+	#foga {
+		position: absolute; margin: auto;
+		bottom: 0; left: 0; right: 0;
+		height: 10vh;
+		width: 100%;
+		background-image: url('fog.png');
+		background-size: 10vh;
+		background-position: 0vh 0vh;
+		animation-name: foga;
+		animation-duration: 1500ms;
+		animation-direction: normal;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	@keyframes fogb {
+		0% {background-position: 0vh 0vh}
+		100% {background-position: 10vh 0vh}
+	}
+	#fogb {
+		position: absolute; margin: auto;
+		bottom: -7vh; left: 0; right: 0;
+		height: 10vh;
+		width: 100%;
+		background-image: url('fog.png');
+		background-size: 10vh;
+		background-position: 0vh 0vh;
+		animation-name: fogb;
+		animation-duration: 1800ms;
+		animation-direction: normal;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	#button {
+		position: absolute; margin: auto;
+		top: 5vh;
+		left: 5vh;
+		height: 8vh;
+		width: 8vh;
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAfElEQVQ4jb2U0Q2AIAxEH4aBZAYZQCZ1AXdwpPPDaPhApITYpAkJ7UuP5nCSAAgpXgdDHNvuAJDEvC6ShDXvvm5ADpqsEkrxH+Tr0ZsnqYG8pTikqGetNUip6AaX7sAg5w3QDKkBTJP8A+kxX97n4dLc6+KQooa42I34T04EI76q6BfkmQAAAABJRU5ErkJggg==');
+		background-size: 100% 100%;
+	}
+	#button:hover {
+		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAhUlEQVQ4ja2T0Q2AIAwFr4aBZAYZQCZ1AXdwpPojxCiQUOgXoe3lNa+FCSHrvqW3WvoB3AsgBogCsgwAkhJ1ANdxGhngY2Axd7/CfT98DKW6PHJJdY+Sqns/Ja1iKiaUICWntJHrGqe6Bj8lFbubezTF4nkQH4Pl+HKfqKoZ8oSkcUYOkBvxLRt4tTQtuAAAAABJRU5ErkJggg==');
+	}
+	#button:hover ~ #player, #button:hover ~ #deathbox, #button:hover ~ #fall{
+		animation-play-state: running;
+	}
+	#fall {
+		position: absolute; margin: auto;
+		top:0; left: 0;
+		animation: c 5s linear;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+		z-index: 9999;
+	}
+	#fall:hover ~ #player, #fall:hover ~ #deathbox, #fall:hover {
+		animation-play-state: running;
+	}
+	#player {
+		position: absolute; margin: auto;
+		bottom: 37vh;
+		left: 5vh;
+		width: 5vh;
+		height: 13vh;
+		background-color: #9fc5b6;
+		animation: a 5s linear;
+		animation-fill-mode: forwards;
+		animation-play-state: paused;
+	}
+	@keyframes a {
+		0% {left: 5vh; bottom: 37vh;}
+		50% {left: 50vh; bottom: 35vh;}
+		65% {bottom: 30vh;}
+		67% {bottom: 30vh;}
+		100% {left: 100vh; bottom: -80vh;}
+	}
+	@keyframes b {
+		0% {opacity: 0;}
+		80% {opacity: 0;}
+		85% {opacity: 1;}
+		100% {opacity: 1;}
+	}
+	@keyframes c {
+		0% {width: 0vh; height: 0vh;}
+		66% {width: 0vh; height: 0vh;}
+		67% {width: 200vh; height: 100vh;}
+		100% {width: 200vh; height: 100vh;}
+	}
+</style>
+</head>
+<body>
+<div id="background">
+<div id="button"> </div>
+<div id="fall"> </div>
+<div id="player"> </div>
+<div id="cliff"> </div>
+	<div id="deathbox">
+		<p id="deathtext">
+			YOU DIED
+		</p>
+	</div>
+</div>
+<div id="foga"> </div>
+<div id="fogb"> </div>
+</body>
