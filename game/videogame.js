@@ -28,7 +28,7 @@ window.addEventListener("keydown", function(e) {
 		document.location = "https://pea.moe/";
 	}
 	if (e.keyCode == 13) {
-		document.location = "https://pea.moe/videogame.html";
+		document.location = "https://pea.moe/game/";
 	}
 	if (e.keyCode == 32) {
 		rainbowToggle();
