@@ -108,7 +108,6 @@ var commands = {
 	"earthquake": {
 		hidden: true,
 		alias: ["shake"],
-		desc: "AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH",
 		action: function(c) {
 			c.print("AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHH")
 			earthquakeToggle();
@@ -116,7 +115,6 @@ var commands = {
 	},
 	"rainbow": {
 		hidden: true,
-		desc: "Toggles rainbow mode",
 		action: function(c) {
 			rainbowToggle();
 			if (!rainbowColorActive) {
@@ -135,7 +133,6 @@ var commands = {
 	"rainbowspeed": {
 		hidden: true,
 		alias: ["speed"],
-		desc: "Sets the rainbow speed, default is 0.7",
 		usage: "(num)",
 		action: function(c) {
 			if (!c.msg){ c.print("You need to specify the speed, try speed (num)"); return; }
@@ -258,13 +255,11 @@ var commands = {
 	},
 	"toast": {
 		alias: ["burnttoast"],
-		hidden: true,
 		action: function(c) {
 			c.print("Toast is a cutie <3");
 		}
 	},
 	"coinflip": {
-		hidden: true,
 		desc: "flips a coin",
 		action: function(c) {
 			let result = ['heads', 'tails'][Math.floor(Math.random() * 2)];
@@ -273,8 +268,6 @@ var commands = {
 	},
 	"8ball": {
 		hidden: true,
-		desc: "the all knowing 8ball in electric form. it is never wrong",
-		usage: "(question)",
 		action: function(c) {
 			if (!c.msg) { 
 			c.print("You need to ask a question!"); return;}
@@ -285,7 +278,6 @@ var commands = {
 	},
 	"fortune": {
 		hidden: true,
-		desc: "Tells you your fortune",
 		action: function(c) {
 			let result = vars.fortune[Math.floor(Math.random() * vars.fortune.length)];
 			c.print(result);
@@ -293,7 +285,6 @@ var commands = {
 	},
 	"lewd": {
 		hidden: true,
-		desc: "lewds the user",
 		action: function(c) {
 			let result = vars.lewd[Math.floor(Math.random() * vars.lewd.length)];
 			if (!username == ""){
@@ -305,7 +296,6 @@ var commands = {
 	},	
 	"insult": {
 		hidden: true,
-		desc: "Insults the user",
 		action: function(c) {
 			let result = vars.insult[Math.floor(Math.random() * vars.insult.length)];
 			c.print(result);
@@ -313,7 +303,6 @@ var commands = {
 	},
 	"flirt": {
 		hidden: true,
-		desc: "Flirts with the user",
 		action: function(c) {
 			let result = vars.flirt[Math.floor(Math.random() * vars.flirt.length)];
 			c.print(result);
@@ -321,7 +310,6 @@ var commands = {
 	},
 	"lart": {
 		hidden: true,
-		desc: "larts the user",
 		action: function(c) {
 			let result = vars.lart[Math.floor(Math.random() * vars.lart.length)];
 			if (username){
@@ -333,7 +321,6 @@ var commands = {
 	},	
 	"kill": {
 		hidden: true,
-		desc: "kills the user",
 		action: function(c) {
 			let result = vars.kill[Math.floor(Math.random() * vars.kill.length)];
 			if (!username == ""){
@@ -354,7 +341,6 @@ var commands = {
 	},
 	"gamenojs": {
 		hidden: true,
-		desc: "play a my really cool videogame without js",
 		action: function(c) {
 			c.print("have fun!")
 			setTimeout( function() {
