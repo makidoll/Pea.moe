@@ -254,6 +254,7 @@ var commands = {
 		}
 	},
 	"toast": {
+		hidden: true,
 		alias: ["burnttoast"],
 		action: function(c) {
 			c.print("Toast is a cutie <3");
