@@ -261,6 +261,7 @@ var commands = {
 		}
 	},
 	"coinflip": {
+		hidden: true,
 		desc: "flips a coin",
 		action: function(c) {
 			let result = ['heads', 'tails'][Math.floor(Math.random() * 2)];
