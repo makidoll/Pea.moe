@@ -84,18 +84,18 @@ function hueCommand(newDegree){
 	document.getElementById("hueslider").value = degree;
 }
 
-// random color
+// random color (fuck chrome)
 
-function randColor() {
-	hueCommand(Math.round(Math.random() * 360));
-}; randColor();
+//function randColor() {
+//	hueCommand(Math.round(Math.random() * 360));
+//}; randColor();
 
-// hue rotate slider
+// hue rotate slider (fuck chrome)
 
-document.getElementById("hueslider").addEventListener("input", function(e) {
-	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
-	degree = e.srcElement.value
-})
+//document.getElementById("hueslider").addEventListener("input", function(e) {
+//	document.body.style.filter = "hue-rotate("+e.srcElement.value+"deg)";
+//	degree = e.srcElement.value
+//})
 
 // rainbow mode
 

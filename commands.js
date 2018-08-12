@@ -116,11 +116,12 @@ var commands = {
 	"rainbow": {
 		hidden: true,
 		action: function(c) {
-			rainbowToggle();
-			if (!rainbowColorActive) {
-				c.print("rainbow mode off :("); return;
-			}
-			c.print("COLORS!!!");
+			//rainbowToggle();
+			//if (!rainbowColorActive) {
+			//	c.print("rainbow mode off :("); return;
+			//}
+			//c.print("COLORS!!!");
+			c.print("fuck chrome");
 		},
 		block: ["firefox"],
 		block_action: function(c) {
@@ -152,8 +153,9 @@ var commands = {
 		desc: "Change the color",
 		usage: "(0-360)",
 		action: function(c) {
-			hueCommand(c.msg);
-			c.print("color set to "+c.msg+" degrees");
+			//hueCommand(c.msg);
+			//c.print("color set to "+c.msg+" degrees");
+			c.print("fuck chrome");
 		},
 		block: ["firefox"],
 		block_action: function(c) {
@@ -253,13 +255,6 @@ var commands = {
 			c.print("butts");
 		}
 	},
-	"toast": {
-		hidden: true,
-		alias: ["burnttoast"],
-		action: function(c) {
-			c.print("Toast is a cutie <3");
-		}
-	},
 	"coinflip": {
 		hidden: true,
 		desc: "flips a coin",
@@ -335,21 +330,12 @@ var commands = {
 	"game": {
 		desc: "play a really cool video game made by me",
 		action: function(c) {
-			c.print("have fun!")
-			setTimeout( function() {
-				document.location = "/game";
-			}, 500)
+			c.print("fuck chrome :c")
+			//setTimeout( function() {
+			//	document.location = "/game";
+			//}, 500)
 		}
 	},
-	"gamenojs": {
-		hidden: true,
-		action: function(c) {
-			c.print("have fun!")
-			setTimeout( function() {
-				document.location = "/game/nojs.html";
-			}, 500)
-		}
-	}
 }
 
 var terminal = new Term({
