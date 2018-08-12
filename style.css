@@ -345,3 +345,8 @@ html {
 #term p:focus {
 	outline: none;
 }
+
+#fuckchrome {
+	font-family: pixelfont;
+	color: blue;
+}

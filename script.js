@@ -97,6 +97,14 @@ function hueCommand(newDegree){
 //	degree = e.srcElement.value
 //})
 
+document.getElementById("hueslider").addEventListener("input", function(e) {
+	document.getElementById("fuckchrome").style = "font-size: "+e.srcElement.value+"px";
+	document.getElementById("fuckchrome").style.filter = "hue-rotate("+e.srcElement.value+"deg)";
+	degree = e.srcElement.value
+})
+
+
+
 // rainbow mode
 
 // var rainbowColorActive = false;a
