@@ -255,7 +255,7 @@ var cookie = {
 function fuckFirefox(chance) {
 	if (typeof InstallTrigger !== 'undefined'){
 		if (Math.floor((Math.random() * chance) + 1) == 1){
-			document.location = "https://maki.cat/feuerfuchs/";
+			document.location = "https://maki.cafe/feuerfuchs/";
 		}
 	}
 }

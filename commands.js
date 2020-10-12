@@ -1,4 +1,4 @@
-//terminal by maki https://maki.cat/
+//terminal by maki https://maki.cafe/
 var username = ""
 var msgTimer = false;
 var commands = {
@@ -71,7 +71,7 @@ var commands = {
 				msgTimer = true;
 				let img = document.createElement("div");
 				//eeee don't abuse please
-				img.style.backgroundImage = "url(https://maki.cat/discord-message?to=pea&name="+escape(username)+"&message="+escape(c.msg)+")";
+				img.style.backgroundImage = "url(https://maki.cafe/discord-message?to=pea&name="+escape(username)+"&message="+escape(c.msg)+")";
 				document.body.appendChild(img);
 				setTimeout(function() { document.body.removeChild(img) }.bind(img), 8000);
 				c.print("Your message might have been sent!");
